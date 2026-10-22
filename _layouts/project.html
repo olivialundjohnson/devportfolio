@@ -120,7 +120,7 @@ layout: default
   {%- assign siblings = site.projects | where: "category", page.category | where_exp: "p", "p.url != page.url" | sort: "order" %}
   {%- if siblings.size > 0 %}
   <nav class="wrap project__next" aria-labelledby="more-title">
-    <h2 class="section__title" id="more-title" style="margin-bottom: 1rem;">More {{ cat.title }}</h2>
+    <h2 class="section__title" id="more-title" style="margin-bottom: 1rem;">More in {{ cat.title }}</h2>
     <ul class="project-list">
       {%- for p in siblings %}{% include project-row.html project=p %}{% endfor %}
     </ul>

@@ -1,6 +1,6 @@
 ---
 layout: category
 category: energy
-title: Energy & Climate
+title: Energy
 permalink: /energy/
 ---

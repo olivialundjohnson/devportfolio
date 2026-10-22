@@ -32,31 +32,31 @@ nav:
 # The four areas of work (homepage tiles). Order here = order on the homepage and Work page.
 # `key` must match the `category:` set in each project file.
 areas:
-  - key: projects
-    title: Projects
+  - key: visual
+    title: Visual
     subtitle: Documentary · Narrative · Wildlife
-    url: /projects/
-    image: /assets/images/home/projects.jpg
+    url: /visual/
+    image: /assets/images/home/visual.jpg
     image_alt: "A hand holds a small glass vial in saturated blue and magenta light"
     image_position: 15% center   # optional: which part stays in frame when the tile crops (left/right %, top/bottom)
   - key: writing
-    title: Writing & Ideas
+    title: Writing
     subtitle: Fiction · Climate · Speculation
     url: /writing/
     image: /assets/images/home/writing.jpg
-    image_alt: "[TODO: describe the Writing & Ideas tile image]"
+    image_alt: "[TODO: describe the Writing tile image]"
   - key: energy
-    title: Energy & Climate
+    title: Energy
     subtitle: Research · Policy · Communications
     url: /energy/
     image: /assets/images/home/energy.jpg
-    image_alt: "[TODO: describe the Energy & Climate tile image]"
+    image_alt: "[TODO: describe the Energy tile image]"
   - key: audio
-    title: Audio & Storytelling
+    title: Audio
     subtitle: Ground Truth · Fervo Energy
     url: /audio/
     image: /assets/images/home/audio.jpg
-    image_alt: "[TODO: describe the Audio & Storytelling tile image]"
+    image_alt: "[TODO: describe the Audio tile image]"
 
 # ---------------------------------------------------------------------------
 # Build settings — you shouldn't need to change anything below this line.

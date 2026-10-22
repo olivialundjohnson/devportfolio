@@ -1,6 +1,6 @@
 ---
 layout: category
 category: writing
-title: Writing & Ideas
+title: Writing
 permalink: /writing/
 ---

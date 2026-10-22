@@ -31,7 +31,7 @@ Restart `jekyll serve` after editing `_config.yml`; other files reload by themse
 | The four homepage tiles (title, subtitle, image, link) | `areas:` in `_config.yml` |
 | Homepage headline, subline, optional hero clip | `index.md` |
 | Projects (one file each) | `_projects/` |
-| Area pages (Projects, Writing, Energy & Climate, Audio) | `projects.md`, `writing.md`, `energy.md`, `audio.md`, which list their projects automatically |
+| Area pages (Visual, Writing, Energy, Audio) | `visual.md`, `writing.md`, `energy.md`, `audio.md`, which list their projects automatically |
 | About / Contact | `about.md` / `contact.md` |
 | Colors and fonts | top of `assets/css/main.css` |
 
@@ -40,7 +40,7 @@ Restart `jekyll serve` after editing `_config.yml`; other files reload by themse
 1. Copy an existing file in `_projects/`, e.g. `caddisfly.md` → `my-new-film.md`.
    The file name becomes the address: `/work/my-new-film/`.
 2. Edit the settings between the `---` lines:
-   - `category:` `projects`, `writing`, `energy`, or `audio`. This decides which area page lists it.
+   - `category:` `visual`, `writing`, `energy`, or `audio`. This decides which area page lists it.
    - `order:` its position within that area (1 = first).
    - `description:` one or two sentences.
    - `opening:` the large image at the top. Add a `youtube_id` or a `vimeo_id` to make it a click-to-play video; the image becomes its poster.
@@ -79,7 +79,7 @@ first image in an odd-numbered set shows wide, 21:9), About portrait 4:5.
 
 | Image | File |
 | --- | --- |
-| Homepage tiles | `assets/images/home/projects.jpg`, `writing.jpg`, `energy.jpg`, `audio.jpg` |
+| Homepage tiles | `assets/images/home/visual.jpg`, `writing.jpg`, `energy.jpg`, `audio.jpg` |
 | Project opening images | `assets/images/projects/<project>/opening.jpg` |
 | Project visuals | `assets/images/projects/<project>/still-1.jpg`, `still-2.jpg`, … |
 | About portrait | `assets/images/about/portrait.jpg` |
@@ -98,7 +98,7 @@ Search the repo for `[TODO` to jump to each one. Empty `url: ""` fields also
 show as `[TODO]` markers on the site until filled.
 
 **`_config.yml`**
-- Images and `image_alt` for the Writing, Energy & Climate, and Audio tiles
+- Images and `image_alt` for the Writing, Energy, and Audio tiles
 
 **`index.md`**
 - `hero_poster_alt`: only needed if you turn on the hero clip

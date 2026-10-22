@@ -1,6 +1,6 @@
 ---
 title: Caddisfly
-category: projects      # projects | writing | energy | audio
+category: visual      # visual | writing | energy | audio
 order: 1                # position within its category
 description: "A documentary about Dr. John Morse, who for 31 years has used the streams and rivers around the Highlands Biological Field Station as an outdoor laboratory."
 opening:                # large opening image (16:9); add youtube_id or vimeo_id to make it a click-to-play video

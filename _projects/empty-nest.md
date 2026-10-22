@@ -1,6 +1,6 @@
 ---
 title: Empty Nest
-category: projects
+category: visual
 order: 3
 description: "When Allison's son leaves for college, the possibilities are endless! Now what?"
 opening:

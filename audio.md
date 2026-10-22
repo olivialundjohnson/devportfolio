@@ -1,6 +1,6 @@
 ---
 layout: category
 category: audio
-title: Audio & Storytelling
+title: Audio
 permalink: /audio/
 ---
