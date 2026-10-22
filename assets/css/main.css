@@ -241,6 +241,18 @@ span.cta::after { content: none; }
 .project__cta { padding-block: clamp(2.5rem, 6vw, 4.5rem); text-align: left; }
 .project__next { padding-top: clamp(2rem, 5vw, 3rem); }
 
+/* Click-to-load Vimeo (same look as the YouTube embed) */
+.video-facade { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.video-facade img { width: 100%; height: 100%; object-fit: cover; }
+.video-facade__play {
+  position: absolute; inset: 0; display: block;
+  background: no-repeat center / 76px 76px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 76"><circle cx="38" cy="38" r="37" fill="%23161616" fill-opacity=".55" stroke="%23f3eee4" stroke-width="1.5"/><path d="M32 27v22l18-11z" fill="%23f3eee4"/></svg>');
+  transition: background-color .3s var(--ease);
+}
+.video-facade__play:hover { background-color: rgb(22 22 22 / 0.15); }
+.video-facade__play:focus-visible { outline-offset: -8px; }
+.video-facade iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
 /* lite-youtube: understated play button */
 lite-youtube { max-width: none; }
 lite-youtube > .lty-playbtn {

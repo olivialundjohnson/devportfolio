@@ -15,6 +15,14 @@ layout: default
         <span class="lyt-visually-hidden">Play {{ page.title | escape }}</span>
       </a>
     </lite-youtube>
+    {%- elsif page.opening.vimeo_id and page.opening.vimeo_id != "" %}
+    {%- comment %} Click-to-load Vimeo: nothing loads from Vimeo until play is pressed. Without JS, the button links to Vimeo. {% endcomment %}
+    <div class="video-facade js-vimeo" data-vimeo-id="{{ page.opening.vimeo_id }}"{% if page.opening.vimeo_hash %} data-vimeo-hash="{{ page.opening.vimeo_hash }}"{% endif %} data-title="{{ page.title | escape }}">
+      <img src="{{ page.opening.image | relative_url }}" alt="{{ page.opening.alt | escape }}" width="1920" height="1080" fetchpriority="high" decoding="async">
+      <a class="video-facade__play" href="https://vimeo.com/{{ page.opening.vimeo_id }}{% if page.opening.vimeo_hash %}/{{ page.opening.vimeo_hash }}{% endif %}">
+        <span class="visually-hidden">Play {{ page.title | escape }}</span>
+      </a>
+    </div>
     {%- else %}
     <img src="{{ page.opening.image | relative_url }}" alt="{{ page.opening.alt | escape }}" width="1920" height="1080" fetchpriority="high" decoding="async">
     {%- endif %}

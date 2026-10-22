@@ -8,3 +8,21 @@
     clip.pause();
   }
 })();
+
+// Click-to-load Vimeo player: swap the still for the real player only when asked.
+document.querySelectorAll('.js-vimeo').forEach(function (box) {
+  var play = box.querySelector('.video-facade__play');
+  play.addEventListener('click', function (e) {
+    e.preventDefault();
+    var src = 'https://player.vimeo.com/video/' + encodeURIComponent(box.dataset.vimeoId) + '?autoplay=1&dnt=1';
+    if (box.dataset.vimeoHash) src += '&h=' + encodeURIComponent(box.dataset.vimeoHash);
+    var frame = document.createElement('iframe');
+    frame.src = src;
+    frame.title = box.dataset.title || 'Video';
+    frame.allow = 'autoplay; fullscreen; picture-in-picture';
+    frame.allowFullscreen = true;
+    box.replaceChildren(frame);
+    box.classList.add('is-playing');
+    frame.focus();
+  });
+});

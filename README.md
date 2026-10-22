@@ -43,7 +43,7 @@ Restart `jekyll serve` after editing `_config.yml`; other files reload by themse
    - `category:` `projects`, `writing`, `energy`, or `audio`. This decides which area page lists it.
    - `order:` its position within that area (1 = first).
    - `description:` one or two sentences.
-   - `opening:` the large image at the top. Add a `youtube_id` to make it a click-to-play video.
+   - `opening:` the large image at the top. Add a `youtube_id` or a `vimeo_id` to make it a click-to-play video; the image becomes its poster.
    - `facts:` rows like My role, Collaborators, Year. Add, rename, or delete rows freely.
    - `link:` the one call to action (`label` + `url`), e.g. "Listen on Spotify".
    - Optional sections: `visuals` (images), `highlights` (excerpts or findings), `sources`, `framework`.
@@ -52,8 +52,12 @@ Restart `jekyll serve` after editing `_config.yml`; other files reload by themse
 Every project uses the same template (`_layouts/project.html`). Sections you
 leave out simply don't appear.
 
-**YouTube IDs** are the part after `v=` in a YouTube link:
-`youtube.com/watch?v=`**`abc123XYZ`**. Nothing loads from YouTube until someone presses play.
+**Video IDs:**
+- YouTube: the part after `v=`, e.g. `youtube.com/watch?v=`**`abc123XYZ`** → `youtube_id: "abc123XYZ"`
+- Vimeo: the number, e.g. `vimeo.com/`**`512817928`** → `vimeo_id: "512817928"`. For an
+  unlisted video, the private link looks like `vimeo.com/512817928/`**`a1b2c3`**; put that last part in `vimeo_hash`.
+
+Nothing loads from YouTube or Vimeo until someone presses play.
 
 ## Swap an image
 
@@ -109,7 +113,6 @@ show as `[TODO]` markers on the site until filled.
 
 **`_projects/empty-nest.md`**
 - Your role, collaborators, year
-- Trailer link (`link.url`) and YouTube ID
 - Alt text for the opening image and 2 stills
 - Optional: a few sentences about the film below the second `---`
 
