@@ -31,29 +31,26 @@ nav:
 
 # The four areas of work (homepage tiles). Order here = order on the homepage and Work page.
 # `key` must match the `category:` set in each project file.
+# Optional: add `subtitle: ...` to an area to show a gray line under its title.
 areas:
   - key: visual
     title: Visual
-    subtitle: Documentary · Narrative · Wildlife
     url: /visual/
     image: /assets/images/home/visual.jpg
     image_alt: "A hand holds a small glass vial in saturated blue and magenta light"
     image_position: 15% center   # optional: which part stays in frame when the tile crops (left/right %, top/bottom)
   - key: writing
     title: Writing
-    subtitle: Fiction · Climate · Speculation
     url: /writing/
     image: /assets/images/home/writing.jpg
     image_alt: "[TODO: describe the Writing tile image]"
   - key: energy
     title: Energy
-    subtitle: Research · Policy · Communications
     url: /energy/
     image: /assets/images/home/energy.jpg
     image_alt: "[TODO: describe the Energy tile image]"
   - key: audio
     title: Audio
-    subtitle: Ground Truth · Fervo Energy
     url: /audio/
     image: /assets/images/home/audio.jpg
     image_alt: "[TODO: describe the Audio tile image]"

@@ -28,7 +28,7 @@ layout: default
                width="1600" height="1280" decoding="async"{% if forloop.index > 2 %} loading="lazy"{% endif %}{% if c.image_position %} style="object-position: {{ c.image_position }}"{% endif %}>
         </div>
         <h2 class="label tile__title"><span>{{ c.title }}</span></h2>
-        <p class="tile__subtitle">{{ c.subtitle }}</p>
+        {%- if c.subtitle %}<p class="tile__subtitle">{{ c.subtitle }}</p>{% endif %}
       </a>
     </li>
     {%- endfor %}

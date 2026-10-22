@@ -12,7 +12,7 @@ permalink: /work/
   <section class="work-group" aria-labelledby="group-{{ c.key }}">
     <div class="work-group__head">
       <h2 class="label" id="group-{{ c.key }}"><a href="{{ c.url | relative_url }}" style="text-decoration:none">{{ c.title }}</a></h2>
-      <p class="meta" style="margin:0">{{ c.subtitle }}</p>
+      {%- if c.subtitle %}<p class="meta" style="margin:0">{{ c.subtitle }}</p>{% endif %}
     </div>
     <ul class="project-list">
       {%- for p in projects %}{% include project-row.html project=p %}{% endfor %}

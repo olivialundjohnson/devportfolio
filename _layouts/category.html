@@ -6,7 +6,7 @@ layout: default
   <header class="page__head">
     <p class="eyebrow"><a href="{{ '/work/' | relative_url }}">Work</a></p>
     <h1 class="display">{{ cat.title }}</h1>
-    <p class="lede">{{ cat.subtitle }}</p>
+    {%- if cat.subtitle %}<p class="lede">{{ cat.subtitle }}</p>{% endif %}
     {%- assign body = content | strip %}{%- if body != "" %}<div class="prose">{{ content }}</div>{% endif %}
   </header>
   {%- assign projects = site.projects | where: "category", page.category | sort: "order" %}
