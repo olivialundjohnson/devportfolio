@@ -135,7 +135,11 @@ layout: default
   </section>
   {%- endif %}
 
-  {%- if page.link %}
+  {%- comment %} Repeat the call to action at the bottom only when there's content above it. {% endcomment %}
+  {%- assign body_text = content | strip %}
+  {%- assign has_more = false %}
+  {%- if body_text != "" or page.framework or page.highlights or page.visuals or page.sources %}{% assign has_more = true %}{% endif %}
+  {%- if page.link and has_more %}
   <div class="wrap project__cta">
     {% include todo-link.html url=page.link.url label=page.link.label todo=page.link.todo class="cta" %}
   </div>

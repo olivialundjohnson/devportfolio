@@ -5,7 +5,7 @@ order: 1
 description: "Ground Truth traces Fervo Energy's decade-long climb from a grad-school hunch to a multibillion-dollar IPO, told not as corporate history, but as a human one."
 opening:
   image: /assets/images/projects/ground-truth/opening.jpg
-  alt: "[TODO: describe the opening image or cover art]"
+  alt: "Ground Truth podcast art: the title in bold navy letters over layered bands of terracotta, rust, gray-blue and navy, with the Fervo Energy logo"
 facts:
   - label: Format
     value: Podcast
@@ -13,8 +13,6 @@ facts:
     value: Fervo Energy
   - label: My role
     value: Creator and host
-  - label: Collaborators
-    value: "[TODO: collaborators]"
 link:
   label: Listen on Spotify
   url: https://open.spotify.com/show/7wx9YX7AetZPx9qChqHdWM

@@ -20,11 +20,6 @@ link:
   label: Meet the Jackson Wild fellows
   url: https://www.jacksonwild.org/fellows
 idea_heading: The fellowship
-visuals:
-  - src: /assets/images/projects/jackson-wild-fellowship/still-1.jpg
-    alt: "[TODO: describe still 1]"
-  - src: /assets/images/projects/jackson-wild-fellowship/still-2.jpg
-    alt: "[TODO: describe still 2]"
 ---
 
 In 2023, I was selected as 1 of 16 fellows from over 300 applicants to

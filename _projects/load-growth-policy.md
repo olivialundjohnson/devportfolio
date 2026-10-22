@@ -15,7 +15,7 @@ facts:
   - label: Year
     value: "2025"
   - label: Type
-    value: Capstone research (unpublished)
+    value: Capstone research
 # No link: add one (label + url) if you publish the paper or a summary.
 
 # Your "## Key themes" heading below is drawn as this three-column framework.

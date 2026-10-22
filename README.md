@@ -100,37 +100,16 @@ turned on "reduce motion".
 
 ## Every [TODO]
 
-Search the repo for `[TODO` to jump to each one. Empty `url: ""` fields also
+Search the repo for `[TODO` to find each one. Empty `url: ""` fields also
 show as `[TODO]` markers on the site until filled.
 
-**`index.md`**
-- `hero_poster_alt`: only needed if you turn on the hero clip
+- **`_projects/caddisfly.md`:** the Waterbear link. The button plays the
+  trailer for now; once the new deal is signed, swap in the Waterbear lines
+  that are commented out in the file.
+- **`index.md`:** `hero_poster_alt`, only if you turn on the optional hero clip.
 
-**`_projects/caddisfly.md`**
-- Collaborators and year
-- Waterbear link: the button currently plays the trailer; swap it in once the new deal is signed (instructions are in the file)
-- Three stills, with alt text
-
-**`_projects/jackson-wild-fellowship.md`**
-- Two stills, with alt text
-- YouTube ID for the National Park Service short (optional)
-
-**`_projects/empty-nest.md`**
-- Collaborators and year
-- Two stills, with alt text
-- Optional: a few sentences about the film below the second `---`
-
-**`_projects/the-breathing-room.md`**
-- Opening image, with alt text
-
-**`_projects/load-growth-policy.md`** (Yale research)
-- Optional: a link (`link:` with `label` and `url`) if you publish the paper or a summary
-
-**`_projects/ground-truth.md`**
-- Collaborators
-- Opening image or cover art, with alt text
-
-**Images:** any image still showing "PLACEHOLDER IMAGE" needs replacing (see "Swap an image").
+Nothing else is outstanding. To add stills to a project later, add a
+`visuals:` list (see "Add a project") and the "Selected visuals" gallery appears.
 
 ## Credits
 

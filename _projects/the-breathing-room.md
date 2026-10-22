@@ -5,7 +5,7 @@ order: 1
 description: "What does it cost to breathe?"
 opening:
   image: /assets/images/projects/the-breathing-room/opening.jpg
-  alt: "[TODO: describe the opening image]"
+  alt: "Title page of The Breathing Room by Olivia Lund Johnson, opening with the lines: Breathe in. Hold. Breathe out. In. Hold. Out."
 facts:
   - label: Form
     value: Speculative flash fiction
@@ -14,7 +14,7 @@ facts:
   - label: Year
     value: "2026"
 link:
-  label: View on Yale Planetary Solutions
+  label: Read the story
   url: https://planetarysolutions.yale.edu/profile/olivia-johnson
 highlights_heading: Excerpt
 highlights:

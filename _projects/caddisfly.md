@@ -12,10 +12,6 @@ facts:                  # add, remove, or rename rows freely
     value: Documentary
   - label: My role
     value: Director, Producer, Editor
-  - label: Collaborators
-    value: "[TODO: collaborators]"
-  - label: Year
-    value: "[TODO: year]"
 link:                   # the one clear call to action
   label: Watch the trailer
   url: https://vimeo.com/882237780
@@ -23,13 +19,6 @@ link:                   # the one clear call to action
   # label: Watch on Waterbear
   # url: [TODO: Waterbear link]
 idea_heading: About the film
-visuals:
-  - src: /assets/images/projects/caddisfly/still-1.jpg
-    alt: "[TODO: describe still 1]"
-  - src: /assets/images/projects/caddisfly/still-2.jpg
-    alt: "[TODO: describe still 2]"
-  - src: /assets/images/projects/caddisfly/still-3.jpg
-    alt: "[TODO: describe still 3]"
 ---
 
 For the past 31 years, Dr. John Morse has used the gorgeous streams and rivers

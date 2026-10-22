@@ -13,27 +13,7 @@ facts:
     value: Narrative short
   - label: My role
     value: Writer & Director
-  - label: Collaborators
-    value: "[TODO: collaborators]"
-  - label: Year
-    value: "[TODO: year]"
 link:
   label: Watch on Vimeo
   url: https://vimeo.com/512817928
-highlights_heading: Festivals & awards
-highlights_style: list   # compact list instead of large excerpts
-highlights:
-  - text: Official Selection, Seattle International Film Festival 2021
-  - text: Official Selection, Venice Shorts Film Awards
-  - text: Official Selection, Short to the Point, January 2021
-  - text: Bronze Award, Independent Shorts Awards, Los Angeles, January 2021
-  - text: Lift-Off Global Network First-Time Filmmaker Sessions
-  - text: Finalist, Vancouver Independent Film Festival, Spring 2021
-  - text: Special Mention, LIMFF 2021
-  - text: Official Selection, Niagara Falls International Short Festival, Spring 2021
-visuals:
-  - src: /assets/images/projects/empty-nest/still-1.jpg
-    alt: "[TODO: describe still 1]"
-  - src: /assets/images/projects/empty-nest/still-2.jpg
-    alt: "[TODO: describe still 2]"
 ---
