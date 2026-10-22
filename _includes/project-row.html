@@ -1,0 +1,13 @@
+{%- assign p = include.project -%}
+<li class="project-row">
+  <a class="project-row__link" href="{{ p.url | relative_url }}">
+    <div class="project-row__media">
+      <img src="{{ p.thumbnail | default: p.opening.image | relative_url }}" alt="" loading="lazy" decoding="async" width="1600" height="1000">
+    </div>
+    <div>
+      <h3 class="project-row__title">{{ p.title }}</h3>
+      <p class="project-row__desc">{{ p.description }}</p>
+    </div>
+    <span class="project-row__arrow" aria-hidden="true">→</span>
+  </a>
+</li>

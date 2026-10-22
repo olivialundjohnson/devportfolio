@@ -1,0 +1,115 @@
+---
+layout: default
+---
+{%- assign cat = site.categories | where: "key", page.category | first -%}
+{%- if page.opening.youtube_id and page.opening.youtube_id != "" %}
+<link rel="stylesheet" href="{{ '/assets/vendor/lite-youtube-embed/lite-yt-embed.css' | relative_url }}">
+<script src="{{ '/assets/vendor/lite-youtube-embed/lite-yt-embed.js' | relative_url }}" defer></script>
+{%- endif %}
+<article class="project">
+  <div class="wrap project__opening">
+    {%- if page.opening.youtube_id and page.opening.youtube_id != "" %}
+    <lite-youtube videoid="{{ page.opening.youtube_id }}" title="{{ page.title | escape }}" playlabel="Play {{ page.title | escape }}"
+      params="rel=0" style="background-image: url('{{ page.opening.image | relative_url }}');">
+      <a href="https://www.youtube.com/watch?v={{ page.opening.youtube_id }}" class="lty-playbtn" title="Play video">
+        <span class="lyt-visually-hidden">Play {{ page.title | escape }}</span>
+      </a>
+    </lite-youtube>
+    {%- else %}
+    <img src="{{ page.opening.image | relative_url }}" alt="{{ page.opening.alt | escape }}" width="1920" height="1080" fetchpriority="high" decoding="async">
+    {%- endif %}
+  </div>
+
+  <header class="wrap project__intro">
+    <div>
+      <p class="eyebrow"><a href="{{ cat.url | relative_url }}">{{ cat.title }}</a></p>
+      <h1 class="display project__title">{{ page.title }}</h1>
+      <p class="project__description">{{ page.description }}</p>
+      {% include todo-link.html url=page.link.url label=page.link.label todo=page.link.todo class="cta" %}
+    </div>
+    <dl class="facts">
+      {%- for f in page.facts %}
+      <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+      {%- endfor %}
+    </dl>
+  </header>
+
+  {%- if content != "" %}
+  <section class="wrap section">
+    <div class="section__grid">
+      <h2 class="section__title">{{ page.idea_heading | default: "The idea" }}</h2>
+      <div class="prose">{{ content }}</div>
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if page.framework %}
+  <section class="wrap section" aria-labelledby="framework-title">
+    <div class="section__grid" style="margin-bottom: 2rem;">
+      <h2 class="section__title" id="framework-title">{{ page.framework.heading | default: "Framework" }}</h2>
+      {%- if page.framework.intro %}<p class="lede" style="margin:0">{{ page.framework.intro }}</p>{% endif %}
+    </div>
+    <ol class="framework" style="--cols: {{ page.framework.steps.size }};">
+      {%- for step in page.framework.steps %}
+      <li class="framework__step">
+        <h3>{{ step.title }}</h3>
+        <ul>{% for item in step.items %}<li>{{ item }}</li>{% endfor %}</ul>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endif %}
+
+  {%- if page.highlights and page.highlights.size > 0 %}
+  <section class="wrap section">
+    <div class="section__grid">
+      <h2 class="section__title">{{ page.highlights_heading | default: "Highlights" }}</h2>
+      <ul class="highlights">
+        {%- for h in page.highlights %}
+        <li class="highlight">
+          {%- if h.quote %}<blockquote><p>{{ h.quote }}</p></blockquote>{% else %}<p class="lede" style="color: var(--text)">{{ h.text }}</p>{% endif %}
+          {%- if h.source %}<p class="highlight__source">{{ h.source }}</p>{% endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if page.visuals and page.visuals.size > 0 %}
+  <section class="wrap section" aria-labelledby="visuals-title">
+    <h2 class="section__title" id="visuals-title" style="margin-bottom: 1.5rem;">{{ page.visuals_heading | default: "Selected visuals" }}</h2>
+    <ul class="visuals">
+      {%- for v in page.visuals %}
+      <li><figure>
+        <img src="{{ v.src | relative_url }}" alt="{{ v.alt | escape }}" loading="lazy" decoding="async" width="1600" height="1067">
+        {%- if v.caption %}<figcaption>{{ v.caption }}</figcaption>{% endif %}
+      </figure></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if page.sources and page.sources.size > 0 %}
+  <section class="wrap section">
+    <div class="section__grid">
+      <h2 class="section__title">Sources</h2>
+      <ol class="sources">{% for s in page.sources %}<li>{{ s }}</li>{% endfor %}</ol>
+    </div>
+  </section>
+  {%- endif %}
+
+  <div class="wrap project__cta">
+    {% include todo-link.html url=page.link.url label=page.link.label todo=page.link.todo class="cta" %}
+  </div>
+
+  {%- assign siblings = site.projects | where: "category", page.category | where_exp: "p", "p.url != page.url" | sort: "order" %}
+  {%- if siblings.size > 0 %}
+  <nav class="wrap project__next" aria-labelledby="more-title">
+    <h2 class="section__title" id="more-title" style="margin-bottom: 1rem;">More {{ cat.title }}</h2>
+    <ul class="project-list">
+      {%- for p in siblings %}{% include project-row.html project=p %}{% endfor %}
+    </ul>
+  </nav>
+  {%- endif %}
+</article>

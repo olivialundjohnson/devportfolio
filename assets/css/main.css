@@ -279,3 +279,7 @@ lite-youtube::before { font-family: var(--font-sans); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* ---------- About ---------- */
+.about-portrait { width: 100%; max-width: 22rem; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); margin-bottom: 2rem; }
+.prose .cta { text-decoration: none; }

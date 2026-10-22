@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{%- assign cat = site.categories | where: "key", page.category | first -%}
+<div class="wrap page">
+  <header class="page__head">
+    <p class="eyebrow"><a href="{{ '/work/' | relative_url }}">Work</a></p>
+    <h1 class="display">{{ cat.title }}</h1>
+    <p class="lede">{{ cat.subtitle }}</p>
+    {%- if content != "" %}<div class="prose">{{ content }}</div>{% endif %}
+  </header>
+  {%- assign projects = site.projects | where: "category", page.category | sort: "order" %}
+  <ul class="project-list">
+    {%- for p in projects %}
+    {% include project-row.html project=p %}
+    {%- endfor %}
+  </ul>
+</div>
