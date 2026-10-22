@@ -1,0 +1,93 @@
+# ---------------------------------------------------------------------------
+# Site settings. GitHub Pages rebuilds the site on every push.
+# ---------------------------------------------------------------------------
+
+title: Olivia Johnson
+descriptor: Creative / Energy / Storytelling
+description: >-
+  Olivia Johnson works across film, energy, climate, and storytelling.
+footer_line: Creative work. Complex ideas. Real-world systems.
+
+# For a custom domain or <username>.github.io repo, leave baseurl empty.
+# For a project repo (github.com/<username>/portfolio), use baseurl: "/portfolio".
+url: ""          # [TODO: site URL, e.g. https://oliviajohnson.com]
+baseurl: ""
+
+author:
+  name: Olivia Johnson
+  email: ""      # [TODO: public email]
+  linkedin: ""   # [TODO: LinkedIn URL]
+
+# Fallback image for link previews (social cards).
+image: /assets/images/home/film.jpg
+
+nav:
+  - title: Work
+    url: /work/
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/
+
+# The four areas of work. Order here = order on the homepage and Work page.
+# `key` must match the `category:` set in each project file.
+categories:
+  - key: film
+    title: Film & Moving Image
+    subtitle: Documentary · Narrative · Wildlife
+    url: /film/
+    image: /assets/images/home/film.jpg
+    image_alt: "[TODO: describe the Film & Moving Image tile image]"
+  - key: writing
+    title: Writing & Ideas
+    subtitle: Fiction · Climate · Speculation
+    url: /writing/
+    image: /assets/images/home/writing.jpg
+    image_alt: "[TODO: describe the Writing & Ideas tile image]"
+  - key: energy
+    title: Energy & Climate
+    subtitle: Research · Policy · Communications
+    url: /energy/
+    image: /assets/images/home/energy.jpg
+    image_alt: "[TODO: describe the Energy & Climate tile image]"
+  - key: audio
+    title: Audio & Storytelling
+    subtitle: Ground Truth · Fervo Energy
+    url: /audio/
+    image: /assets/images/home/audio.jpg
+    image_alt: "[TODO: describe the Audio & Storytelling tile image]"
+
+# ---------------------------------------------------------------------------
+# Build settings — you shouldn't need to change anything below this line.
+# ---------------------------------------------------------------------------
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "" }
+    values: { layout: page }
+
+theme: null
+
+# Only plugins on the GitHub Pages allow-list.
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts/
+  - vendor/
+  - .github/

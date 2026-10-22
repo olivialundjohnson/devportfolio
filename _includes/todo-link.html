@@ -1,0 +1,9 @@
+{%- comment -%}
+  A link that shows a visible [TODO] marker until its URL is filled in.
+  Usage: {% include todo-link.html url=page.link.url label="Listen on Spotify" todo="Spotify link" class="cta" %}
+{%- endcomment -%}
+{%- if include.url and include.url != "" -%}
+<a{% if include.class %} class="{{ include.class }}"{% endif %} href="{% if include.mailto %}mailto:{% endif %}{{ include.url }}"{% unless include.mailto %} rel="noopener"{% endunless %}>{{ include.label }}</a>
+{%- else -%}
+<span class="todo{% if include.class %} {{ include.class }}{% endif %}">{{ include.label }} [TODO: {{ include.todo | default: include.label }}]</span>
+{%- endif -%}
