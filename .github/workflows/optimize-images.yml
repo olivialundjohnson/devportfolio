@@ -4,7 +4,7 @@ name: Optimize images
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths: ["assets/images/**"]
   workflow_dispatch:
 
