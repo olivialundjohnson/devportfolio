@@ -25,7 +25,7 @@ layout: default
       <a class="tile__link" href="{{ c.url | relative_url }}">
         <div class="tile__media">
           <img src="{{ c.image | relative_url }}" alt="{{ c.image_alt | escape }}"
-               width="1600" height="1280" decoding="async"{% if forloop.index > 2 %} loading="lazy"{% endif %}>
+               width="1600" height="1280" decoding="async"{% if forloop.index > 2 %} loading="lazy"{% endif %}{% if c.image_position %} style="object-position: {{ c.image_position }}"{% endif %}>
         </div>
         <h2 class="label tile__title"><span>{{ c.title }}</span></h2>
         <p class="tile__subtitle">{{ c.subtitle }}</p>

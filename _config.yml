@@ -37,7 +37,8 @@ areas:
     subtitle: Documentary · Narrative · Wildlife
     url: /projects/
     image: /assets/images/home/projects.jpg
-    image_alt: "[TODO: describe the Projects tile image]"
+    image_alt: "A hand holds a small glass vial in saturated blue and magenta light"
+    image_position: 15% center   # optional: which part stays in frame when the tile crops (left/right %, top/bottom)
   - key: writing
     title: Writing & Ideas
     subtitle: Fiction · Climate · Speculation

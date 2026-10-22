@@ -72,6 +72,8 @@ All images here are placeholders. Use only files you own or have licensed.
   to at most 1920px wide, compresses them, strips camera metadata (including
   GPS location), and commits the result. File names stay the same. Use JPG or WebP for photos.
 
+Images are cropped to fit these shapes. On a homepage tile, add `image_position:` (e.g. `15% center`) in `_config.yml` to choose which part stays in frame.
+
 Shapes used: homepage tiles 5:4, project openings 16:9, visuals 3:2 (a lone
 first image in an odd-numbered set shows wide, 21:9), About portrait 4:5.
 
@@ -96,7 +98,7 @@ Search the repo for `[TODO` to jump to each one. Empty `url: ""` fields also
 show as `[TODO]` markers on the site until filled.
 
 **`_config.yml`**
-- `image_alt` for each of the four homepage tiles (once the real images are in)
+- Images and `image_alt` for the Writing, Energy & Climate, and Audio tiles
 
 **`index.md`**
 - `hero_poster_alt`: only needed if you turn on the hero clip
