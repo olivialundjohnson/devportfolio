@@ -1,0 +1,157 @@
+---
+layout: default
+---
+{%- assign cat = site.areas | where: "key", page.category | first -%}
+{%- if page.opening.youtube_id and page.opening.youtube_id != "" %}
+<link rel="stylesheet" href="{{ '/assets/vendor/lite-youtube-embed/lite-yt-embed.css' | relative_url }}">
+<script src="{{ '/assets/vendor/lite-youtube-embed/lite-yt-embed.js' | relative_url }}" defer></script>
+{%- endif %}
+<article class="project">
+  <div class="wrap project__opening">
+    {%- if page.opening.youtube_id and page.opening.youtube_id != "" %}
+    <lite-youtube videoid="{{ page.opening.youtube_id }}" title="{{ page.title | escape }}" playlabel="Play {{ page.title | escape }}"
+      params="rel=0" style="background-image: url('{{ page.opening.image | relative_url }}');">
+      <a href="https://www.youtube.com/watch?v={{ page.opening.youtube_id }}" class="lty-playbtn" title="Play video">
+        <span class="lyt-visually-hidden">Play {{ page.title | escape }}</span>
+      </a>
+    </lite-youtube>
+    {%- elsif page.opening.vimeo_id and page.opening.vimeo_id != "" %}
+    {%- comment %} Click-to-load Vimeo: nothing loads from Vimeo until play is pressed. Without JS, the button links to Vimeo. {% endcomment %}
+    <div class="video-facade js-vimeo" data-vimeo-id="{{ page.opening.vimeo_id }}"{% if page.opening.vimeo_hash %} data-vimeo-hash="{{ page.opening.vimeo_hash }}"{% endif %} data-title="{{ page.title | escape }}">
+      <img src="{{ page.opening.image | relative_url }}" alt="{{ page.opening.alt | escape }}" width="1920" height="1080" fetchpriority="high" decoding="async">
+      <a class="video-facade__play" href="https://vimeo.com/{{ page.opening.vimeo_id }}{% if page.opening.vimeo_hash %}/{{ page.opening.vimeo_hash }}{% endif %}">
+        <span class="visually-hidden">Play {{ page.title | escape }}</span>
+      </a>
+    </div>
+    {%- elsif page.opening.zoom %}
+    {%- comment %} zoom: true makes the image open full size (useful for maps and charts). {% endcomment %}
+    <a class="opening-zoom" href="{{ page.opening.image | relative_url }}">
+      <img src="{{ page.opening.image | relative_url }}" alt="{{ page.opening.alt | escape }}" width="1920" height="1080" fetchpriority="high" decoding="async">
+      <span class="opening-zoom__hint" aria-hidden="true">View full size</span>
+    </a>
+    {%- else %}
+    <img src="{{ page.opening.image | relative_url }}" alt="{{ page.opening.alt | escape }}" width="1920" height="1080" fetchpriority="high" decoding="async">
+    {%- endif %}
+  </div>
+
+  <header class="wrap project__intro">
+    <div>
+      <p class="eyebrow"><a href="{{ cat.url | relative_url }}">{{ cat.title }}</a></p>
+      <h1 class="display project__title">{{ page.title }}</h1>
+      <p class="project__description">{{ page.description }}</p>
+      {%- if page.link %}
+      {% include todo-link.html url=page.link.url label=page.link.label todo=page.link.todo class="cta" %}
+      {%- endif %}
+    </div>
+    <dl class="facts">
+      {%- for f in page.facts %}
+      <div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>
+      {%- endfor %}
+    </dl>
+  </header>
+
+  {%- comment -%}
+    Body text. Each "## Heading" in the Markdown becomes its own section.
+    A heading that matches framework.heading is drawn as the framework diagram.
+    Text before the first heading (or a body with no headings) uses idea_heading.
+  {%- endcomment -%}
+  {%- assign parts = content | split: "<h2" %}
+  {%- assign framework_done = false %}
+  {%- for part in parts %}
+    {%- if forloop.first %}
+      {%- assign lead = part | strip %}
+      {%- if lead != "" %}
+  <section class="wrap section">
+    <div class="section__grid">
+      <h2 class="section__title">{{ page.idea_heading | default: "The idea" }}</h2>
+      <div class="prose">{{ part }}</div>
+    </div>
+  </section>
+      {%- endif %}
+    {%- else %}
+      {%- assign head = part | split: "</h2>" | first %}
+      {%- assign heading = head | split: ">" | last | strip %}
+      {%- assign rest = part | remove_first: head | remove_first: "</h2>" %}
+      {%- if page.framework and heading == page.framework.heading %}
+  {% include framework.html intro=rest %}
+        {%- assign framework_done = true %}
+      {%- else %}
+  <section class="wrap section">
+    <div class="section__grid">
+      <h2 class="section__title">{{ heading }}</h2>
+      <div class="prose">{{ rest }}</div>
+    </div>
+  </section>
+      {%- endif %}
+    {%- endif %}
+  {%- endfor %}
+
+  {%- if page.framework and framework_done == false %}
+  {% include framework.html %}
+  {%- endif %}
+
+  {%- if page.highlights and page.highlights.size > 0 %}
+  <section class="wrap section">
+    <div class="section__grid">
+      <h2 class="section__title">{{ page.highlights_heading | default: "Highlights" }}</h2>
+      {%- if page.highlights_style == "list" %}
+      <ul class="award-list">
+        {%- for h in page.highlights %}<li>{{ h.text }}</li>{% endfor %}
+      </ul>
+      {%- else %}
+      <ul class="highlights">
+        {%- for h in page.highlights %}
+        <li class="highlight">
+          {%- if h.quote %}<blockquote><p>{{ h.quote }}</p></blockquote>{% else %}<p class="lede" style="color: var(--text)">{{ h.text }}</p>{% endif %}
+          {%- if h.source %}<p class="highlight__source">{{ h.source }}</p>{% endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if page.visuals and page.visuals.size > 0 %}
+  <section class="wrap section" aria-labelledby="visuals-title">
+    <h2 class="section__title" id="visuals-title" style="margin-bottom: 1.5rem;">{{ page.visuals_heading | default: "Selected visuals" }}</h2>
+    <ul class="visuals">
+      {%- for v in page.visuals %}
+      <li><figure>
+        <img src="{{ v.src | relative_url }}" alt="{{ v.alt | escape }}" loading="lazy" decoding="async" width="1600" height="1067">
+        {%- if v.caption %}<figcaption>{{ v.caption }}</figcaption>{% endif %}
+      </figure></li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  {%- if page.sources and page.sources.size > 0 %}
+  <section class="wrap section">
+    <div class="section__grid">
+      <h2 class="section__title">Sources</h2>
+      <ol class="sources">{% for s in page.sources %}<li>{{ s }}</li>{% endfor %}</ol>
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- comment %} Repeat the call to action at the bottom only when there's content above it. {% endcomment %}
+  {%- assign body_text = content | strip %}
+  {%- assign has_more = false %}
+  {%- if body_text != "" or page.framework or page.highlights or page.visuals or page.sources %}{% assign has_more = true %}{% endif %}
+  {%- if page.link and has_more %}
+  <div class="wrap project__cta">
+    {% include todo-link.html url=page.link.url label=page.link.label todo=page.link.todo class="cta" %}
+  </div>
+  {%- endif %}
+
+  {%- assign siblings = site.projects | where: "category", page.category | where_exp: "p", "p.url != page.url" | sort: "order" %}
+  {%- if siblings.size > 0 %}
+  <nav class="wrap project__next" aria-labelledby="more-title">
+    <h2 class="section__title" id="more-title" style="margin-bottom: 1rem;">More in {{ cat.title }}</h2>
+    <ul class="project-list">
+      {%- for p in siblings %}{% include project-row.html project=p %}{% endfor %}
+    </ul>
+  </nav>
+  {%- endif %}
+</article>

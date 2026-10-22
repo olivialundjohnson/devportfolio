@@ -1,0 +1,8 @@
+<footer class="site-footer wrap">
+  <p class="site-footer__line">{{ site.footer_line }}</p>
+  <ul class="site-footer__links">
+    <li>{% include todo-link.html url=site.author.email mailto=true label="Email" todo="email" %}</li>
+    <li>{% include todo-link.html url=site.author.linkedin label="LinkedIn" todo="LinkedIn URL" %}</li>
+    <li>&copy; {{ site.author.name }}</li>
+  </ul>
+</footer>

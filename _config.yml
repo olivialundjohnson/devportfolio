@@ -1,0 +1,91 @@
+# ---------------------------------------------------------------------------
+# Site settings. GitHub Pages rebuilds the site on every push.
+# ---------------------------------------------------------------------------
+
+title: Olivia Johnson
+descriptor: Creative / Energy / Storytelling
+description: >-
+  I like big ideas and making them happen. Film, energy, climate & everything in between.
+footer_line: Creative work. Complex ideas. Real-world systems.
+
+# For a custom domain or <username>.github.io repo, leave baseurl empty.
+# For a project repo (github.com/<username>/portfolio), use baseurl: "/portfolio".
+url: "https://oliviajohnson.com"
+baseurl: ""
+
+author:
+  name: Olivia Johnson
+  email: olivia@lundjohnson.com
+  linkedin: https://www.linkedin.com/in/olivialundjohnson/
+
+# Fallback image for link previews (social cards).
+image: /assets/images/about/portrait.jpg
+
+nav:
+  - title: Work
+    url: /work/
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/
+
+# The four areas of work (homepage tiles). Order here = order on the homepage and Work page.
+# `key` must match the `category:` set in each project file.
+# Optional: add `subtitle: ...` to an area to show a gray line under its title.
+areas:
+  - key: film
+    title: Film
+    url: /film/
+    image: /assets/images/home/film.jpg
+    image_alt: "A hand holds a small glass vial in saturated blue and magenta light"
+    image_position: 15% center   # optional: which part stays in frame when the tile crops (left/right %, top/bottom)
+  - key: writing
+    title: Writing
+    url: /writing/
+    image: /assets/images/home/writing.jpg
+    image_alt: "Close-up of calligraphy practice: ink and pencil letterforms on guide-lined paper"
+  - key: audio
+    title: Audio
+    url: /audio/
+    image: /assets/images/home/audio.jpg
+    image_alt: "Close-up of the grooves of a spinning vinyl record"
+  - key: research
+    title: Research
+    url: /research/
+    image: /assets/images/home/research.jpg
+    image_alt: "Looking straight up through the steel lattice of a transmission tower against a clear blue sky"
+
+# ---------------------------------------------------------------------------
+# Build settings — you shouldn't need to change anything below this line.
+# ---------------------------------------------------------------------------
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "" }
+    values: { layout: page }
+
+theme: null
+
+# Only plugins on the GitHub Pages allow-list.
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts/
+  - vendor/
+  - .github/

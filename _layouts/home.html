@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<section class="wrap intro" aria-labelledby="intro-title">
+  <h1 id="intro-title" class="display intro__headline">
+    {%- for line in page.headline %}<span>{{ line }}</span>{% endfor -%}
+  </h1>
+  <p class="intro__subline">{{ page.subline }}</p>
+</section>
+
+{%- if page.hero_video and page.hero_video != "" %}
+<section class="wrap hero-clip" aria-label="Showreel">
+  <video class="js-hero-clip" controls muted loop playsinline autoplay preload="metadata"
+         poster="{{ page.hero_poster | relative_url }}">
+    <source src="{{ page.hero_video | relative_url }}" type="video/mp4">
+    <img src="{{ page.hero_poster | relative_url }}" alt="{{ page.hero_poster_alt | escape }}">
+  </video>
+</section>
+{%- endif %}
+
+<section class="wrap" aria-label="Areas of work">
+  <ul class="tiles">
+    {%- for c in site.areas %}
+    <li class="tile">
+      <a class="tile__link" href="{{ c.url | relative_url }}">
+        <div class="tile__media">
+          <img src="{{ c.image | relative_url }}" alt="{{ c.image_alt | escape }}"
+               width="1600" height="1280" decoding="async"{% if forloop.index > 2 %} loading="lazy"{% endif %}{% if c.image_position %} style="object-position: {{ c.image_position }}"{% endif %}>
+        </div>
+        <h2 class="label tile__title"><span>{{ c.title }}</span></h2>
+        {%- if c.subtitle %}<p class="tile__subtitle">{{ c.subtitle }}</p>{% endif %}
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

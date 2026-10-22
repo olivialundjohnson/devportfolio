@@ -1,345 +1,117 @@
-# Dev Portfolio
+# Olivia Johnson — portfolio
 
-🚀 **[Dev Portfolio V2 has arrived. Meet Devfolio, a modern portfolio + blog template built with GatsbyJS and TailwindCSS](https://github.com/RyanFitzgerald/devfolio)** 🚀
+A Jekyll site for GitHub Pages. You never run a build: edit a file, push (or
+edit directly on GitHub), and the site updates in a minute or two. It uses only
+plugins GitHub Pages supports (`jekyll-seo-tag`, `jekyll-sitemap`).
 
-This repo contains an easy-to-customize personal dev portfolio template that was created with Sass and JavaScript. It is lightweight and fully responsive, as well as comes with the Bootstrap grid system and loaded with Font Awesome. The site is static and comes production ready if you just want to add your information and go. Alternatively, you can edit styles, colours, and scripts fairly easily. The site was built as modular as possible to make it easy to shift around styles and content.
+Anything still missing shows on the site as a dashed **[TODO: …]** marker, and
+every one of them is listed at the bottom of this file.
 
-To view a live demo, [click here](https://ryanfitzgerald.github.io/devportfolio/).
+## Preview it
 
-Looking for a blog template? Checkout [DevBlog](https://github.com/RyanFitzgerald/devblog).
+**On GitHub (easiest):** push the repo, then go to **Settings → Pages** and pick
+**Deploy from a branch → `main` → `/ (root)`**. The `CNAME` file points the site
+at `oliviajohnson.com`; leave it in place, and set the domain's DNS as GitHub's
+custom-domain docs describe.
 
-## Features
+**On your computer (optional, needs Ruby):**
 
-* Gulp ready (compiles Sass and minifies JS)
-* Sass ready with lots of commenting
-* Fully responsive
-* Comes with Bootstrap grid system
-* Easy colour changes can be done through simple variable edits
-
-## Contents
-
-- [Setup and Configuration](#setup-and-configuration)
-    - [Making Edits / Customizing the Template](#making-edits--customizing-the-template)
-    - [Using the Template As Is](#using-the-template-as-is)
-- [Customization and Editing](#customization-and-editing)
-    - [General](#general)
-    - [Images](#images)
-    - [Header Section](#header-section)
-    - [Lead Section](#lead-section)
-    - [About Section](#about-section)
-    - [Experience Section](#experience-section)
-    - [Education Section](#education-section)
-    - [Projects Section](#projects-section)
-    - [Skills Section](#skills-section)
-    - [Contact Section](#contact-section)
-    - [Footer Section](#footer-section)
-    - [Optional Sections](#optional-sections)
-- [Changelog](#changelog)
-- [License](#license)
-
-## Setup and Configuration
-
-The setup required can be broken into two types:
-1. If you want to make edits or customize the template
-2. If you just want to add your information as use as is
-
-### Making Edits / Customizing the Template
-
-To setup, simply fork the repo and run `npm install` in order to get all the Gulp dev dependencies. Next, run `Gulp watch` to compile the Sass and minify the JavaScript. Alternatively, if you don't have Gulp installed globally, you can run the npm script `npm run watch`. Any changes done to the JavaScript (js/scripts.js) or Sass (sass/styles.scss) will be autocompiled and ready to go.
-
-All scripts are within `js/scripts.js` and get minified to `js/scripts.min.js`. All styles are in `sass/styles.scss` and get compiled to `css/styles.css`. Both the minified scripts file and compiled CSS file are what is loaded on the page by default.
-
-At this point, the page is ready to go and you can begin to add your own information and make any needed changes. The sections below  contains a quick breakdown of each of the default sections and how they work.
-
-### Using The Template As Is
-
-If you wish to use the template as is (i.e. how it's seen in the demo), then all that's required is the `css`, `images`, `js`, `libs` folders and the `index.html` file. You would then add your content to `index.html` as needed and you're good to go!
-
-## Customization and Editing
-
-### General
-
-In general, most styles on the page are based off the definitions of variables in the variable section of the style sheet:
-
-```SCSS
-// Define base and accent colors
-$base-color: #3498db;
-$base-color-hover: darken($base-color, 10%);
-
-// Define background colors
-$background: #fff;
-$background-alt: #f2f2f5;
-
-// Define border colors
-$border: #dcd9d9;
-
-// Define text colors
-$heading: #374054;
-$text: #74808a;
+```sh
+bundle install
+bundle exec jekyll serve      # open http://localhost:4000
 ```
 
-If you wish to change the general colour scheme of the page for example, simply change the value of `$base-color`.
-
-There is also a number of default CSS classes that can be applied such as `.shadow`, `.shadow-large`, `.btn-rounded-white`, and various others. These can be found under the General Styles section in the style sheet.
-
-### Images
-
-By default, the template comes with a number of images, some of which can be kept and others which act simply as placeholders and should be switched. The template contains the following:
-
-* Main background (images/lead-bg.jpg) - this is the main background image provided via [Unsplash](https://unsplash.com/). This can be kept or changed easily by replacing `images/lead-bg.jpg` with your new background (recommended size of at least 1920x1080).
-* Favicon (/favicon.ico) - this is the favicon used for the page. Similar to the main bg, this can be kept or changed easily by replacing the `favicon.ico` with your new one.
-* Project image - these are the images associated with the projects under the project section. These are simply placeholders and should either be replaced or removed.
-
-### Header Section
-
-The header section can be found within the `<header>` tag and simply contains an unordered list of anchors to different sections of the page. If you add a new section and want to be able to quickly navigate to it from the top, simply add another list element with an anchor that has the href of the ID of the section. Conversely, if you remove a section, don't forget to remove the associated navigation element.
-
-If you wish to add a header link to an external page, simply add the class `no-scroll` to the anchor. For example:
-
-```HTML
-<li>
-    <a href="https://google.com" class="no-scroll">Google</a>
-</li>
-```
-
-If you wish to have a sticky (fixed) header, you simply need to add a class of `sticky` to the main header. For example, that would be accomplished as follows:
-
-```HTML
-<header class="sticky">
-    <!-- Header content -->
-</header>
-```
-
-### Lead Section
-
-The Lead section is pretty straightforward, it contains an h1 for your name and an h2 for your title. It also contains a link that can be used to link to your resume should you wish to add it as well.
-
-If you want your resume to automatically download when the button is clicked instead of opening up in another tab (the default behaviour), add the following code (Thanks to jkfran for the suggestion) in the lead:
-
-```HTML
-<a href="path/to/resume.pdf" download="resume.pdf" class="btn-rounded-white">Download Resume</a>
-```
-
-The href attribute points to where your resume is stored and the download attribute is what triggers the download / provides the name the file will be downloaded as when the user clicks the button (In this case, it will download as resume.pdf).
-
-### About Section
-
-The about section contains a quick about blurb that can be edited by changing the text within the paragraph tags.
-
-### Experience Section
-
-The experience section creates a vertical timeline with all your relevant experience. The code for the timeline creation can be found within `js/scripts.js` and is an adaptation of [RyanFitzgerald/vertical-timeline](https://github.com/RyanFitzgerald/vertical-timeline).
-
-The default format is as follows:
-
-```HTML
-<div id="experience-timeline">
-    <div data-date="September 2015 – September 2016">
-        <h3>Employer Name</h3>
-        <h4>Job Title</h4>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-        </p>
-    </div>
-</div>
-```
-
-The data attribute `data-date` is what is used to add a date to the associated timeline point. All that is really required is a wrapping div (i.e. `#experience-timeline`) and nested divs to build the timeline. The h3, h4, and p tags are optional and the contents of the div can be styled however you wish.
-
-To add an additional section, simply add additional nested divs under the main wrapping div.
-
-### Education Section
-
-The Education is just a series of `.education-block` classes with some details associated with them. By default, it shows school name, date, degree, and some additional details. For example:
-
-```HTML
-<div class="education-block">
-    <h3>University of Ottawa</h3>
-    <span class="education-date">Sept 2016 - Sept 2017</span>
-    <h4>Bachelor of Science in Computer Science</h4>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-    </p>
-</div>
-```
-
-To add additional section, simply add additional `.education-block` elements.
-
-### Projects Section
-
-The Project section contains a number of `.project` elements that represent each of your projects. By default, it contains a 300x300 image under `.project-image` and relevant project information under `.project-info`. An example is as follows:
-
-```HTML
-<div class="project">
-    <div class="project-image">
-        <img src="images/project.jpg" />
-    </div>
-    <!-- End .project-image -->
-
-    <div class="project-info">
-        <h3>Project Name Here</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-        </p>
-        <a href="#">View Project</a>
-    </div>
-    <!-- End .project-info -->
-</div>
-```
-
-If you want to hide some projects by default, you can throw them in an additional row and add the markup for the "Show More" button. This would be done as follows:
-
-```HTML
-<!-- Projects Above -->
-
-<a id="view-more-projects" href="#">View More Projects</a>
-<div id="more-projects" class="row">
-    <div class="project shadow-large">
-        <div class="project-image">
-            <img src="images/project.jpg" />
-        </div>
-        <!-- End .project-image -->
-        <div class="project-info">
-            <h3>Project Name Here</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-            </p>
-            <a href="#">View Project</a>
-        </div>
-        <!-- End .project-info -->
-    </div>
-    <!-- End .project -->
-</div>
-```
-
-This will add a link that says "View More Projects" under the current projects and when clicked, all projects in the "More-projects" div will be shown. This is optional functionality and isn't provided by default. It is important that you keep the wrapping div ID intact ("#more-projects") as well as the anchor ID ("#view-more-projects"), however the contents of the div and the anchor text itself can be edited however you like.
-
-#### Projects without images
-
-If you do not wish to have a project image associated with a project, you can simply add `no-image` as an additional class to the project. It would look like the following:
-
-```HTML
-<div class="project no-image">
-    <div class="project-info">
-        <h3>Project Name Here</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-        </p>
-        <a href="#">View Project</a>
-    </div>
-    <!-- End .project-info -->
-</div>
-```
-
-### Skills Section
-
-The Skills section is simply an unordered list that spits out a "Skill Cloud" with all the skills listed. To add / remove skills, simply edit or add list elements, like so:
-
-```HTML
-<ul>
-    <li>JavaScript</li>
-    <li>Python</li>
-    <li>Ruby</li>
-    <li>Go</li>
-    <li>Node.js</li>
-</ul>
-```
-
-### Contact Section
-
-Since the page is static, I opted to use the awesome Formspree to allow for a contact form without the need for anything else. To use it, you must have the page hosted on a server (loading a basic HTML page won't work) where a referrer header is generated. Also, simply add the email to the action. An example is as follows:
-
-```HTML
-<form method="POST" action="https://formspree.io/email@email.com">
-    <input type="hidden" name="_subject" value="Contact request from personal website" />
-    <input type="email" name="_replyto" placeholder="Your email" required>
-    <textarea name="message" placeholder="Your message" required></textarea>
-    <button type="submit">Send</button>
-</form>
-```
-For more information on configuration of the contact form or dealing with errors, check out [Formspree](https://formspree.io/).
-
-For a quick tutorial about formspree, check out this [tutsplus tutorial](https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870) that covers different aspects and features of the form tool.
-
-### Footer Section
-
-The Footer contains an optional copyright where you can place your name as well as an unordered list of all of your social or coding related profiles. By default it contains Github, Stack Overflow, Facebook, Twitter, and Google Plus. You can add or remove them easily and simply use the Font Awesome icon associated with the social profile you wish to use. For a list of all icons, [click here](http://fontawesome.io/icons/).
-
-### Optional Sections
-
-The template comes with an optional section that can be added to the page markup to list things like Certifications, Hobbies, and more (Note: these are not included by default). The markup for the additional optional section is as follows:
-
-```HTML
-<div class="optional-section background-alt">
-    <h2 class="heading">Section Name</h2>
-
-    <div class="optional-section-block">
-        <h3>Some content title</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-        </p>
-        <ul>
-            <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </li>
-            <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </li>
-            <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </li>
-        </ul>
-    </div>
-    <!-- End .optional-section-block -->
-
-</div>
-<!-- End .optional-section -->
-```
-
-You can copy .optional-section-block for each new item you wish you have in the optional section. Also, the background-alt class may need to be removed depending on where the optional section is placed in your layout as this adds the grey background. If you play it at the bottom after "Skills", it can be used as is. Also, by default the border is applied at the top, but this can also be adjusted as needed.
-
-The optional section blocks have styling for h3 (the block title), h4, p, and ul tags by default.
-
-## Changelog
-
-### 1.2.2
-
-* Updated dependencies and gulpfile
-
-### 1.2.1
-
-* Updated dependencies and gulpfile
-* Added `no-image` optional class for projects without images (see above for usage)
-
-### 1.2.0
-
-* Added support for optional "Show More Projects" that hides some projects by default if included
-* Added optional sections to display certifications, languages, etc.
-
-### 1.1.3
-
-* Added default favicon to be used or changed
-* Added `sticky` class to make header fixed
-* Updated docs to add image section
-
-### 1.1.2
-
-* Added `no-scroll` class option to header navigation anchor if you want to link to external site
-* Changed contact form input / textarea colours to be based off `$base-color`
-* Changed main background to 100vh so it doesn't overflow if viewport height < 700px
-
-### 1.1.1
-
-* Made input placeholder text more readable
-* Removed timeline line when no JS
-* Added some basic styling to timeline when no JS
-
-### 1.1.0
-
-* Fixed menu toggle on mobile devices
-* Fixed z-index / scrolling issue with mobile menu
-* Mobile menu now closes once a nav element is hit
-
-## License
-
-Completely free (MIT)! See [LICENSE.md](LICENSE.md) for more.
+Restart `jekyll serve` after editing `_config.yml`; other files reload by themselves.
+
+## How the site is organized
+
+| What | Where |
+| --- | --- |
+| Name, descriptor, footer line, email, LinkedIn, nav | `_config.yml` |
+| The four homepage tiles (title, subtitle, image, link) | `areas:` in `_config.yml` |
+| Homepage headline, subline, optional hero clip | `index.md` |
+| Projects (one file each) | `_projects/` |
+| Area pages (Film, Writing, Audio, Research) | `film.md`, `writing.md`, `audio.md`, `research.md`, which list their projects automatically |
+| About / Contact | `about.md` / `contact.md` |
+| Colors and fonts | top of `assets/css/main.css` |
+
+## Add a project
+
+1. Copy an existing file in `_projects/`, e.g. `caddisfly.md` → `my-new-film.md`.
+   The file name becomes the address: `/work/my-new-film/`.
+2. Edit the settings between the `---` lines:
+   - `category:` `film`, `writing`, `audio`, or `research`. This decides which area page lists it.
+   - `order:` its position within that area (1 = first).
+   - `description:` one or two sentences.
+   - `opening:` the large image at the top. Add a `youtube_id` or a `vimeo_id` to make it a click-to-play video; the image becomes its poster. Add `zoom: true` to let visitors open the image full size (good for maps and charts).
+   - `facts:` rows like My role, Collaborators, Year. Add, rename, or delete rows freely.
+   - `link:` the one call to action (`label` + `url`), e.g. "Listen on Spotify".
+   - Optional sections: `visuals` (images), `highlights` (excerpts, findings, or a festival list with `highlights_style: list`), `sources`, `framework`.
+3. Write the text below the second `---`. Each `## Heading` becomes its own
+   section, with the heading as the small label on the left. Without headings,
+   the text goes in one section labeled by `idea_heading` (default "The idea").
+4. **Framework (optional):** a numbered row of columns, e.g. the Key themes on
+   the research page. Define the columns under `framework:` in the settings, and
+   add a `## Heading` with the same name as `framework.heading` where you want it
+   to appear in the text.
+
+Every project uses the same template (`_layouts/project.html`). Sections you
+leave out simply don't appear.
+
+**Video IDs:**
+- YouTube: the part after `v=`, e.g. `youtube.com/watch?v=`**`abc123XYZ`** → `youtube_id: "abc123XYZ"`
+- Vimeo: the number, e.g. `vimeo.com/`**`512817928`** → `vimeo_id: "512817928"`. For an
+  unlisted video, the private link looks like `vimeo.com/512817928/`**`a1b2c3`**; put that last part in `vimeo_hash`.
+
+Nothing loads from YouTube or Vimeo until someone presses play.
+
+## Swap an image
+
+All images here are placeholders. Use only files you own or have licensed.
+
+- **Easiest:** upload your image with the **same name and folder** as the
+  placeholder it replaces (each placeholder shows its own path).
+- **Or:** add a new file and change the path in the Markdown/YAML.
+- **Always** update the matching `alt:` text with a short description of the image.
+- Any size is fine. When you push, a GitHub Action
+  (`.github/workflows/optimize-images.yml`) shrinks images in `assets/images/`
+  to at most 1920px wide, compresses them, strips camera metadata (including
+  GPS location), and commits the result. File names stay the same. Use JPG or WebP for photos.
+
+Images are cropped to fit these shapes. On a homepage tile, add `image_position:` (e.g. `15% center`) in `_config.yml` to choose which part stays in frame.
+
+Shapes used: homepage tiles 5:4, project openings 16:9, visuals 3:2 (a lone
+first image in an odd-numbered set shows wide, 21:9), About portrait 4:5.
+
+| Image | File |
+| --- | --- |
+| Homepage tiles | `assets/images/home/film.jpg`, `writing.jpg`, `audio.jpg`, `research.jpg` |
+| Project opening images | `assets/images/projects/<project>/opening.jpg` |
+| Project visuals | `assets/images/projects/<project>/still-1.jpg`, `still-2.jpg`, … |
+| About portrait | `assets/images/about/portrait.jpg` |
+
+## Optional hero clip
+
+Off by default. To turn it on, add a short, silent MP4 (10–20 s, 1080p, under
+about 8 MB) at `assets/video/hero.mp4`, then set `hero_video:` and
+`hero_poster:` in `index.md`. It loops muted with visible playback controls,
+shows the poster until it loads, and doesn't autoplay for visitors who've
+turned on "reduce motion".
+
+## Every [TODO]
+
+Search the repo for `[TODO` to find each one. Empty `url: ""` fields also
+show as `[TODO]` markers on the site until filled.
+
+- **`_projects/caddisfly.md`:** the Waterbear link. The button plays the
+  trailer for now; once the new deal is signed, swap in the Waterbear lines
+  that are commented out in the file.
+- **`index.md`:** `hero_poster_alt`, only if you turn on the optional hero clip.
+
+Nothing else is outstanding. To add stills to a project later, add a
+`visuals:` list (see "Add a project") and the "Selected visuals" gallery appears.
+
+## Credits
+
+- Fonts: Instrument Serif and Inter (Google Fonts)
+- Video: [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) (MIT), vendored in `assets/vendor/`

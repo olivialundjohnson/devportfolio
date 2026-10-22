@@ -1,0 +1,28 @@
+---
+title: Jackson Wild Fellowship
+category: film
+order: 2
+description: "In 2023, I was selected as 1 of 16 fellows from over 300 applicants for a rigorous 10-day workshop leading up to the Jackson Wild Summit."
+opening:
+  image: /assets/images/projects/jackson-wild-fellowship/opening.jpg
+  alt: "Cupped hands gently hold a frog, its eyes peeking out between the fingers, with a sunlit forest behind"
+  youtube_id: ""        # optional: the short documentary, if it's on YouTube
+facts:
+  - label: Recognition
+    value: Jackson Wild Fellow (1 of 16 from 300+ applicants)
+  - label: Year
+    value: "2023"
+  - label: Made for
+    value: National Park Service
+  - label: Team
+    value: Four-person team
+link:
+  label: Meet the Jackson Wild fellows
+  url: https://www.jacksonwild.org/fellows
+idea_heading: The fellowship
+---
+
+In 2023, I was selected as 1 of 16 fellows from over 300 applicants to
+participate in a rigorous 10-day workshop leading up to the Jackson Wild
+Summit. As part of a four-person team, I helped create a short documentary for
+the National Park Service in just five days.

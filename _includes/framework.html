@@ -1,0 +1,18 @@
+{%- comment -%} The numbered, multi-column framework (original diagram, drawn from page data). {%- endcomment -%}
+<section class="wrap section" aria-labelledby="framework-title">
+  <div class="section__grid" style="margin-bottom: 2rem;">
+    <h2 class="section__title" id="framework-title">{{ page.framework.heading | default: "Framework" }}</h2>
+    {%- assign fw_intro = include.intro | strip %}
+    {%- if fw_intro != "" %}<div class="prose">{{ include.intro }}</div>
+    {%- elsif page.framework.intro %}<p class="lede" style="margin:0">{{ page.framework.intro }}</p>{% endif %}
+  </div>
+  <ol class="framework" style="--cols: {{ page.framework.steps.size }};">
+    {%- for step in page.framework.steps %}
+    <li class="framework__step">
+      <h3>{{ step.title }}</h3>
+      {%- if step.text %}<p>{{ step.text }}</p>{% endif %}
+      {%- if step.items %}<ul>{% for item in step.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
