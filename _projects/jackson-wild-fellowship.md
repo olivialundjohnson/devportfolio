@@ -5,7 +5,7 @@ order: 2
 description: "In 2023, I was selected as 1 of 16 fellows from over 300 applicants for a rigorous 10-day workshop leading up to the Jackson Wild Summit."
 opening:
   image: /assets/images/projects/jackson-wild-fellowship/opening.jpg
-  alt: "[TODO: describe the opening image]"
+  alt: "Cupped hands gently hold a frog, its eyes peeking out between the fingers, with a sunlit forest behind"
   youtube_id: ""        # optional: the short documentary, if it's on YouTube
 facts:
   - label: Recognition

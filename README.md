@@ -107,7 +107,7 @@ show as `[TODO]` markers on the site until filled.
 - Three stills, with alt text
 
 **`_projects/jackson-wild-fellowship.md`**
-- Alt text for the opening image and 2 stills
+- Two stills, with alt text
 - YouTube ID for the National Park Service short (optional)
 
 **`_projects/empty-nest.md`**
