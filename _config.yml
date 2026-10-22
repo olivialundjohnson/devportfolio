@@ -48,7 +48,7 @@ areas:
     title: Audio
     url: /audio/
     image: /assets/images/home/audio.jpg
-    image_alt: "[TODO: describe the Audio tile image]"
+    image_alt: "Close-up of the grooves of a spinning vinyl record"
   - key: research
     title: Research
     url: /research/
