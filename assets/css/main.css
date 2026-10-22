@@ -196,7 +196,7 @@ span.cta::after { content: none; }
 .section__grid { display: grid; gap: 1.5rem clamp(2rem, 6vw, 6rem); }
 @media (min-width: 56rem) { .section__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); } }
 .section__title { font: 500 0.8125rem/1.3 var(--font-sans); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0; padding-top: 0.5rem; }
-.section .prose p:first-child { font-size: clamp(1.125rem, 1.6vw, 1.25rem); }
+.section .prose p { font-size: clamp(1.0625rem, 1.5vw, 1.1875rem); }
 
 /* Visuals */
 .visuals { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(1rem, 1.5vw, 1.25rem); grid-template-columns: 1fr; }
@@ -306,3 +306,15 @@ lite-youtube::before { font-family: var(--font-sans); }
 /* Compact list (e.g. festivals & awards): set highlights_style: list */
 .award-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .award-list li { padding-block: 0.8rem; border-bottom: 1px solid var(--line); }
+.framework__step h3 + p { color: var(--muted); margin: 0; }
+.framework__step h3 { font: 400 clamp(1.5rem, 2.4vw, 2rem)/1.15 var(--font-serif); text-transform: none; letter-spacing: 0; margin-bottom: 1rem; }
+
+/* Opening image that opens full size (opening.zoom: true) */
+.opening-zoom { position: relative; display: block; }
+.opening-zoom__hint {
+  position: absolute; right: 0.75rem; bottom: 0.75rem;
+  font: 500 0.75rem/1 var(--font-sans); letter-spacing: 0.06em; text-transform: uppercase;
+  background: rgb(22 22 22 / 0.8); color: var(--text); padding: 0.55rem 0.75rem; border-radius: 2px;
+  opacity: 0.85; transition: opacity .3s var(--ease);
+}
+.opening-zoom:hover .opening-zoom__hint { opacity: 1; }

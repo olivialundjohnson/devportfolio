@@ -43,11 +43,17 @@ Restart `jekyll serve` after editing `_config.yml`; other files reload by themse
    - `category:` `film`, `writing`, `audio`, or `research`. This decides which area page lists it.
    - `order:` its position within that area (1 = first).
    - `description:` one or two sentences.
-   - `opening:` the large image at the top. Add a `youtube_id` or a `vimeo_id` to make it a click-to-play video; the image becomes its poster.
+   - `opening:` the large image at the top. Add a `youtube_id` or a `vimeo_id` to make it a click-to-play video; the image becomes its poster. Add `zoom: true` to let visitors open the image full size (good for maps and charts).
    - `facts:` rows like My role, Collaborators, Year. Add, rename, or delete rows freely.
    - `link:` the one call to action (`label` + `url`), e.g. "Listen on Spotify".
-   - Optional sections: `visuals` (images), `highlights` (excerpts or findings), `sources`, `framework`.
-3. Write the idea or challenge as normal text below the second `---`.
+   - Optional sections: `visuals` (images), `highlights` (excerpts, findings, or a festival list with `highlights_style: list`), `sources`, `framework`.
+3. Write the text below the second `---`. Each `## Heading` becomes its own
+   section, with the heading as the small label on the left. Without headings,
+   the text goes in one section labeled by `idea_heading` (default "The idea").
+4. **Framework (optional):** a numbered row of columns, e.g. the Key themes on
+   the research page. Define the columns under `framework:` in the settings, and
+   add a `## Heading` with the same name as `framework.heading` where you want it
+   to appear in the text.
 
 Every project uses the same template (`_layouts/project.html`). Sections you
 leave out simply don't appear.
@@ -118,28 +124,16 @@ show as `[TODO]` markers on the site until filled.
 - Optional: a few sentences about the film below the second `---`
 
 **`_projects/the-breathing-room.md`**
-- Opening image alt text
+- Opening image, with alt text
 
-**`_projects/data-center-load-growth.md`** (Yale research)
-- Research title
-- Year (in `description` and `facts`)
-- Advisor or collaborators, if any
-- Link to the paper or a summary, or delete the `link:` block if there isn't one
-- The challenge (body text)
-- Framework: intro sentence, plus the items under Load growth, Policy responses and Assessment
-- Key findings and their citations
-- Sources: copy the sources the research source file cites
-- Opening image alt text
-
-All findings, framework items and citations must come from the research source
-file. The section headings (Load growth, Policy responses, Assessment) are
-editable labels; rename them to match the research.
+**`_projects/load-growth-policy.md`** (Yale research)
+- Optional: a link (`link:` with `label` and `url`) if you publish the paper or a summary
 
 **`_projects/ground-truth.md`**
 - Collaborators
-- Opening image or cover art alt text
+- Opening image or cover art, with alt text
 
-**Images:** every image in `assets/images/` is a placeholder (see "Swap an image").
+**Images:** any image still showing "PLACEHOLDER IMAGE" needs replacing (see "Swap an image").
 
 ## Credits
 

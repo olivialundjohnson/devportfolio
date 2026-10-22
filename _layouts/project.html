@@ -23,6 +23,12 @@ layout: default
         <span class="visually-hidden">Play {{ page.title | escape }}</span>
       </a>
     </div>
+    {%- elsif page.opening.zoom %}
+    {%- comment %} zoom: true makes the image open full size (useful for maps and charts). {% endcomment %}
+    <a class="opening-zoom" href="{{ page.opening.image | relative_url }}">
+      <img src="{{ page.opening.image | relative_url }}" alt="{{ page.opening.alt | escape }}" width="1920" height="1080" fetchpriority="high" decoding="async">
+      <span class="opening-zoom__hint" aria-hidden="true">View full size</span>
+    </a>
     {%- else %}
     <img src="{{ page.opening.image | relative_url }}" alt="{{ page.opening.alt | escape }}" width="1920" height="1080" fetchpriority="high" decoding="async">
     {%- endif %}
@@ -33,7 +39,9 @@ layout: default
       <p class="eyebrow"><a href="{{ cat.url | relative_url }}">{{ cat.title }}</a></p>
       <h1 class="display project__title">{{ page.title }}</h1>
       <p class="project__description">{{ page.description }}</p>
+      {%- if page.link %}
       {% include todo-link.html url=page.link.url label=page.link.label todo=page.link.todo class="cta" %}
+      {%- endif %}
     </div>
     <dl class="facts">
       {%- for f in page.facts %}
@@ -42,30 +50,44 @@ layout: default
     </dl>
   </header>
 
-  {%- assign body = content | strip %}{%- if body != "" %}
+  {%- comment -%}
+    Body text. Each "## Heading" in the Markdown becomes its own section.
+    A heading that matches framework.heading is drawn as the framework diagram.
+    Text before the first heading (or a body with no headings) uses idea_heading.
+  {%- endcomment -%}
+  {%- assign parts = content | split: "<h2" %}
+  {%- assign framework_done = false %}
+  {%- for part in parts %}
+    {%- if forloop.first %}
+      {%- assign lead = part | strip %}
+      {%- if lead != "" %}
   <section class="wrap section">
     <div class="section__grid">
       <h2 class="section__title">{{ page.idea_heading | default: "The idea" }}</h2>
-      <div class="prose">{{ content }}</div>
+      <div class="prose">{{ part }}</div>
     </div>
   </section>
-  {%- endif %}
+      {%- endif %}
+    {%- else %}
+      {%- assign head = part | split: "</h2>" | first %}
+      {%- assign heading = head | split: ">" | last | strip %}
+      {%- assign rest = part | remove_first: head | remove_first: "</h2>" %}
+      {%- if page.framework and heading == page.framework.heading %}
+  {% include framework.html intro=rest %}
+        {%- assign framework_done = true %}
+      {%- else %}
+  <section class="wrap section">
+    <div class="section__grid">
+      <h2 class="section__title">{{ heading }}</h2>
+      <div class="prose">{{ rest }}</div>
+    </div>
+  </section>
+      {%- endif %}
+    {%- endif %}
+  {%- endfor %}
 
-  {%- if page.framework %}
-  <section class="wrap section" aria-labelledby="framework-title">
-    <div class="section__grid" style="margin-bottom: 2rem;">
-      <h2 class="section__title" id="framework-title">{{ page.framework.heading | default: "Framework" }}</h2>
-      {%- if page.framework.intro %}<p class="lede" style="margin:0">{{ page.framework.intro }}</p>{% endif %}
-    </div>
-    <ol class="framework" style="--cols: {{ page.framework.steps.size }};">
-      {%- for step in page.framework.steps %}
-      <li class="framework__step">
-        <h3>{{ step.title }}</h3>
-        <ul>{% for item in step.items %}<li>{{ item }}</li>{% endfor %}</ul>
-      </li>
-      {%- endfor %}
-    </ol>
-  </section>
+  {%- if page.framework and framework_done == false %}
+  {% include framework.html %}
   {%- endif %}
 
   {%- if page.highlights and page.highlights.size > 0 %}
@@ -113,9 +135,11 @@ layout: default
   </section>
   {%- endif %}
 
+  {%- if page.link %}
   <div class="wrap project__cta">
     {% include todo-link.html url=page.link.url label=page.link.label todo=page.link.todo class="cta" %}
   </div>
+  {%- endif %}
 
   {%- assign siblings = site.projects | where: "category", page.category | where_exp: "p", "p.url != page.url" | sort: "order" %}
   {%- if siblings.size > 0 %}
