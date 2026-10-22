@@ -1,6 +1,6 @@
 ---
 title: "[TODO: research title]"
-category: energy
+category: research
 order: 1
 description: "Unpublished master's research at Yale assessing policy responses to data center load growth. [TODO: year]"
 opening:

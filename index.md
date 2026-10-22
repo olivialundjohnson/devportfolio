@@ -10,6 +10,6 @@ subline: Film, energy, climate & everything in between.
 # two lines below. It loops muted, shows playback controls, and falls back to
 # the poster image. Visitors who prefer reduced motion won't see it autoplay.
 hero_video: ""                                   # e.g. /assets/video/hero.mp4
-hero_poster: /assets/images/home/visual.jpg
+hero_poster: /assets/images/home/film.jpg
 hero_poster_alt: "[TODO: describe the hero clip poster image]"
 ---

@@ -33,10 +33,10 @@ nav:
 # `key` must match the `category:` set in each project file.
 # Optional: add `subtitle: ...` to an area to show a gray line under its title.
 areas:
-  - key: visual
-    title: Visual
-    url: /visual/
-    image: /assets/images/home/visual.jpg
+  - key: film
+    title: Film
+    url: /film/
+    image: /assets/images/home/film.jpg
     image_alt: "A hand holds a small glass vial in saturated blue and magenta light"
     image_position: 15% center   # optional: which part stays in frame when the tile crops (left/right %, top/bottom)
   - key: writing
@@ -44,16 +44,16 @@ areas:
     url: /writing/
     image: /assets/images/home/writing.jpg
     image_alt: "[TODO: describe the Writing tile image]"
-  - key: energy
-    title: Energy
-    url: /energy/
-    image: /assets/images/home/energy.jpg
-    image_alt: "[TODO: describe the Energy tile image]"
   - key: audio
     title: Audio
     url: /audio/
     image: /assets/images/home/audio.jpg
     image_alt: "[TODO: describe the Audio tile image]"
+  - key: research
+    title: Research
+    url: /research/
+    image: /assets/images/home/research.jpg
+    image_alt: "[TODO: describe the Research tile image]"
 
 # ---------------------------------------------------------------------------
 # Build settings — you shouldn't need to change anything below this line.

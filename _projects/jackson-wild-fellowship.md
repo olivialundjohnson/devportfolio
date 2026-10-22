@@ -1,6 +1,6 @@
 ---
 title: Jackson Wild Fellowship
-category: visual
+category: film
 order: 2
 description: "In 2023, I was selected as 1 of 16 fellows from over 300 applicants for a rigorous 10-day workshop leading up to the Jackson Wild Summit."
 opening:
