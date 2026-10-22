@@ -5,21 +5,21 @@
 title: Olivia Johnson
 descriptor: Creative / Energy / Storytelling
 description: >-
-  Olivia Johnson works across film, energy, climate, and storytelling.
+  I like big ideas and making them happen. Film, energy, climate & everything in between.
 footer_line: Creative work. Complex ideas. Real-world systems.
 
 # For a custom domain or <username>.github.io repo, leave baseurl empty.
 # For a project repo (github.com/<username>/portfolio), use baseurl: "/portfolio".
-url: ""          # [TODO: site URL, e.g. https://oliviajohnson.com]
+url: "https://oliviajohnson.com"
 baseurl: ""
 
 author:
   name: Olivia Johnson
-  email: ""      # [TODO: public email]
-  linkedin: ""   # [TODO: LinkedIn URL]
+  email: olivia@lundjohnson.com
+  linkedin: https://www.linkedin.com/in/olivialundjohnson/
 
 # Fallback image for link previews (social cards).
-image: /assets/images/home/film.jpg
+image: /assets/images/about/portrait.jpg
 
 nav:
   - title: Work
@@ -32,12 +32,12 @@ nav:
 # The four areas of work (homepage tiles). Order here = order on the homepage and Work page.
 # `key` must match the `category:` set in each project file.
 areas:
-  - key: film
-    title: Film & Moving Image
+  - key: projects
+    title: Projects
     subtitle: Documentary · Narrative · Wildlife
-    url: /film/
-    image: /assets/images/home/film.jpg
-    image_alt: "[TODO: describe the Film & Moving Image tile image]"
+    url: /projects/
+    image: /assets/images/home/projects.jpg
+    image_alt: "[TODO: describe the Projects tile image]"
   - key: writing
     title: Writing & Ideas
     subtitle: Fiction · Climate · Speculation

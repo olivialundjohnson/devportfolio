@@ -10,9 +10,9 @@ every one of them is listed at the bottom of this file.
 ## Preview it
 
 **On GitHub (easiest):** push the repo, then go to **Settings → Pages** and pick
-**Deploy from a branch → `main` → `/ (root)`**. If you use a custom domain, add
-a `CNAME` file containing just the domain (e.g. `oliviajohnson.com`) and set
-`url:` in `_config.yml`.
+**Deploy from a branch → `main` → `/ (root)`**. The `CNAME` file points the site
+at `oliviajohnson.com`; leave it in place, and set the domain's DNS as GitHub's
+custom-domain docs describe.
 
 **On your computer (optional, needs Ruby):**
 
@@ -31,7 +31,7 @@ Restart `jekyll serve` after editing `_config.yml`; other files reload by themse
 | The four homepage tiles (title, subtitle, image, link) | `areas:` in `_config.yml` |
 | Homepage headline, subline, optional hero clip | `index.md` |
 | Projects (one file each) | `_projects/` |
-| Area pages (Film, Writing, Energy & Climate, Audio) | `film.md`, `writing.md`, `energy.md`, `audio.md`, which list their projects automatically |
+| Area pages (Projects, Writing, Energy & Climate, Audio) | `projects.md`, `writing.md`, `energy.md`, `audio.md`, which list their projects automatically |
 | About / Contact | `about.md` / `contact.md` |
 | Colors and fonts | top of `assets/css/main.css` |
 
@@ -40,7 +40,7 @@ Restart `jekyll serve` after editing `_config.yml`; other files reload by themse
 1. Copy an existing file in `_projects/`, e.g. `caddisfly.md` → `my-new-film.md`.
    The file name becomes the address: `/work/my-new-film/`.
 2. Edit the settings between the `---` lines:
-   - `category:` `film`, `writing`, `energy`, or `audio`. This decides which area page lists it.
+   - `category:` `projects`, `writing`, `energy`, or `audio`. This decides which area page lists it.
    - `order:` its position within that area (1 = first).
    - `description:` one or two sentences.
    - `opening:` the large image at the top. Add a `youtube_id` to make it a click-to-play video.
@@ -73,7 +73,7 @@ first image in an odd-numbered set shows wide, 21:9), About portrait 4:5.
 
 | Image | File |
 | --- | --- |
-| Homepage tiles | `assets/images/home/film.jpg`, `writing.jpg`, `energy.jpg`, `audio.jpg` |
+| Homepage tiles | `assets/images/home/projects.jpg`, `writing.jpg`, `energy.jpg`, `audio.jpg` |
 | Project opening images | `assets/images/projects/<project>/opening.jpg` |
 | Project visuals | `assets/images/projects/<project>/still-1.jpg`, `still-2.jpg`, … |
 | About portrait | `assets/images/about/portrait.jpg` |
@@ -92,50 +92,28 @@ Search the repo for `[TODO` to jump to each one. Empty `url: ""` fields also
 show as `[TODO]` markers on the site until filled.
 
 **`_config.yml`**
-- `url`: site address
-- `author.email`: public email (footer + Contact)
-- `author.linkedin`: LinkedIn URL (footer + Contact)
-- `image_alt` for each of the four homepage tiles
+- `image_alt` for each of the four homepage tiles (once the real images are in)
 
 **`index.md`**
 - `hero_poster_alt`: only needed if you turn on the hero clip
 
-**`about.md`**
-- About copy (short, personal, connecting media and film to energy and climate)
-- Portrait alt text
-
 **`_projects/caddisfly.md`**
-- One-sentence description
-- Your role, collaborators, year
-- Waterbear link (`link.url`)
+- Collaborators and year
+- Waterbear link (`link.url`), pending the new deal
 - YouTube trailer ID (optional)
-- The idea (body text)
 - Alt text for the opening image and 3 stills
 
-**`_projects/jackson-wild-film.md`**
-- Film title
-- One-sentence description
-- Your role, collaborators, year
-- Link to watch (`link.url`)
-- YouTube ID (optional)
-- The idea or challenge (body text)
+**`_projects/jackson-wild-fellowship.md`**
 - Alt text for the opening image and 2 stills
+- YouTube ID for the National Park Service short (optional)
 
-**`_projects/narrative-short.md`**
-- Film title
-- One-sentence description
+**`_projects/empty-nest.md`**
 - Your role, collaborators, year
-- Link to watch (`link.url`)
-- YouTube ID (optional)
-- The idea or challenge (body text)
+- Trailer link (`link.url`) and YouTube ID
 - Alt text for the opening image and 2 stills
+- Optional: a few sentences about the film below the second `---`
 
 **`_projects/the-breathing-room.md`**
-- One-line description
-- Where and when it was published
-- Link to read (`link.url`)
-- Excerpt
-- Note on the idea (body text)
 - Opening image alt text
 
 **`_projects/data-center-load-growth.md`** (Yale research)
@@ -154,10 +132,7 @@ file. The section headings (Load growth, Policy responses, Assessment) are
 editable labels; rename them to match the research.
 
 **`_projects/ground-truth.md`**
-- One-line description
-- Spotify link (`link.url`)
 - Collaborators
-- The idea (body text)
 - Opening image or cover art alt text
 
 **Images:** every image in `assets/images/` is a placeholder (see "Swap an image").

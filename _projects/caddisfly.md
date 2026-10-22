@@ -1,8 +1,8 @@
 ---
 title: Caddisfly
-category: film          # film | writing | energy | audio
+category: projects      # projects | writing | energy | audio
 order: 1                # position within its category
-description: "A documentary. [TODO: one-sentence description of Caddisfly]"
+description: "A documentary about Dr. John Morse, who for 31 years has used the streams and rivers around the Highlands Biological Field Station as an outdoor laboratory."
 opening:                # large opening image (16:9); add youtube_id to make it a click-to-play video
   image: /assets/images/projects/caddisfly/opening.jpg
   alt: "[TODO: describe the Caddisfly opening image]"
@@ -11,7 +11,7 @@ facts:                  # add, remove, or rename rows freely
   - label: Format
     value: Documentary
   - label: My role
-    value: "[TODO: your role]"
+    value: Director, Producer, Editor
   - label: Collaborators
     value: "[TODO: collaborators]"
   - label: Year
@@ -19,8 +19,8 @@ facts:                  # add, remove, or rename rows freely
 link:                   # the one clear call to action
   label: Watch on Waterbear
   url: ""
-  todo: Waterbear link
-idea_heading: The idea
+  todo: Waterbear link, new deal in progress
+idea_heading: About the film
 visuals:
   - src: /assets/images/projects/caddisfly/still-1.jpg
     alt: "[TODO: describe still 1]"
@@ -30,5 +30,11 @@ visuals:
     alt: "[TODO: describe still 3]"
 ---
 
-[TODO: two or three short paragraphs on the idea behind *Caddisfly*, what you
-set out to do, and how you approached it.]
+For the past 31 years, Dr. John Morse has used the gorgeous streams and rivers
+around the Highlands Biological Field Station as an outdoor laboratory to
+educate future scientists and professionals about how aquatic insects can be
+used to keep water systems, and ultimately us, healthy.
+
+Now in his late 70s, John reflects on how his passion for teaching has
+influenced a generation of scientists and professionals, and grapples with what
+his legacy may look like once he leaves the classroom for good.
