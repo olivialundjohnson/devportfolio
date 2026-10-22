@@ -3,12 +3,11 @@
   "assets/images/home/audio.jpg": "13d7bbc7d25519d0597043d44b5075dca6adbb62e51b29f0f635c8d71713fdd4",
   "assets/images/home/film.jpg": "9f553fd85aeef4bcb06ae77113a3a96891981e6357b85eaa1b6ed318650dce7a",
   "assets/images/home/research.jpg": "02430eb6ba6622801d2c804d5e81e7283682df7ae9fd3669f1d008987c712e2b",
-  "assets/images/home/writing.jpg": "9f392b14b705b067d19570a3fe038f2e02fa1b386a2482932133950401e51d4b",
+  "assets/images/home/writing.jpg": "161b84e37da9ae00619efb01325c6b6c22804751c6be10035e7eb86c79245955",
   "assets/images/projects/caddisfly/opening.jpg": "1b5a9ad945e84a8c522facb30b7a34d4f843105e1cd45ecd41aba60c70ebaeae",
   "assets/images/projects/caddisfly/still-1.jpg": "a7d3c8ac003105e4b2fc2ba27b1c008319b4b8042a00880c72c1168d6077372b",
   "assets/images/projects/caddisfly/still-2.jpg": "2e77bd2379b6cd0a02a752c239e02159b14f71e925df5d0638c5531f36446f67",
   "assets/images/projects/caddisfly/still-3.jpg": "8d4594e497f97e1e0c177f237b077af23e865386e2187b6bb0dd1fde0ffb88f4",
-  "assets/images/projects/load-growth-policy/opening.jpg": "026c7c1d36869e5139803396514f7a2e84d88674bcd0f4b1e473a38a2b9dd354",
   "assets/images/projects/empty-nest/opening.jpg": "869aabf3fa911bed8a9ba7ffacedfd762b8a723c30284eafafef474fc5d9c449",
   "assets/images/projects/empty-nest/still-1.jpg": "714f845f721b027b020e152f8fd35224b48fcc8b99af757a7a0ee8c9594ae072",
   "assets/images/projects/empty-nest/still-2.jpg": "b751de1c9ab228c2646402cd2c98fee129630c195e64240b77101cca6712fef2",
@@ -16,5 +15,6 @@
   "assets/images/projects/jackson-wild-fellowship/opening.jpg": "5d3387c2ec9c40a37807cf3a113b4788693767ca39da22258ba1ccea46f11ec2",
   "assets/images/projects/jackson-wild-fellowship/still-1.jpg": "83d67277856ff97f770639fbfa7e08cfc9e58141453e736d8253dfc6ba3e808c",
   "assets/images/projects/jackson-wild-fellowship/still-2.jpg": "891e6d04f40e4c9a393253c851d41b6764a8cebd0391eceb3f55443846a1124b",
+  "assets/images/projects/load-growth-policy/opening.jpg": "026c7c1d36869e5139803396514f7a2e84d88674bcd0f4b1e473a38a2b9dd354",
   "assets/images/projects/the-breathing-room/opening.jpg": "4552e0f94fd88a515d408f5eb4279e9b65941f04584d1bd0f4c42ace7855fdc3"
 }

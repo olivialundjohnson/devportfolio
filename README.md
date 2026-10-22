@@ -104,7 +104,7 @@ Search the repo for `[TODO` to jump to each one. Empty `url: ""` fields also
 show as `[TODO]` markers on the site until filled.
 
 **`_config.yml`**
-- Images and `image_alt` for the Writing, Audio, and Research tiles
+- Image and `image_alt` for the Audio tile
 
 **`index.md`**
 - `hero_poster_alt`: only needed if you turn on the hero clip
