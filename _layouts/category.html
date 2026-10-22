@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- assign cat = site.categories | where: "key", page.category | first -%}
+{%- assign cat = site.areas | where: "key", page.category | first -%}
 <div class="wrap page">
   <header class="page__head">
     <p class="eyebrow"><a href="{{ '/work/' | relative_url }}">Work</a></p>

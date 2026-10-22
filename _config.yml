@@ -29,9 +29,9 @@ nav:
   - title: Contact
     url: /contact/
 
-# The four areas of work. Order here = order on the homepage and Work page.
+# The four areas of work (homepage tiles). Order here = order on the homepage and Work page.
 # `key` must match the `category:` set in each project file.
-categories:
+areas:
   - key: film
     title: Film & Moving Image
     subtitle: Documentary · Narrative · Wildlife

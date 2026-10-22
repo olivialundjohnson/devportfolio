@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{%- assign cat = site.categories | where: "key", page.category | first -%}
+{%- assign cat = site.areas | where: "key", page.category | first -%}
 {%- if page.opening.youtube_id and page.opening.youtube_id != "" %}
 <link rel="stylesheet" href="{{ '/assets/vendor/lite-youtube-embed/lite-yt-embed.css' | relative_url }}">
 <script src="{{ '/assets/vendor/lite-youtube-embed/lite-yt-embed.js' | relative_url }}" defer></script>

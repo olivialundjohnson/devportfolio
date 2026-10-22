@@ -100,10 +100,9 @@ h1, h2, h3 { margin: 0 0 0.5em; font-weight: 400; text-wrap: balance; }
 
 /* ---------- Homepage ---------- */
 .intro { padding-block: clamp(3.5rem, 9vw, 7.5rem) clamp(2.5rem, 5vw, 3.5rem); }
-.intro__headline { max-width: 13ch; margin-bottom: 0.35em; }
+.intro__headline { margin-bottom: 0.35em; }
 .intro__headline span { display: block; }
-/* controlled asymmetry: the second line steps in on wide screens */
-@media (min-width: 64rem) { .intro__headline span + span { padding-left: 1.1em; } }
+@media (min-width: 44rem) { .intro__headline span { white-space: nowrap; } }
 .intro__subline { color: var(--muted); font-size: clamp(1.125rem, 1.8vw, 1.375rem); margin: 0; }
 
 .hero-clip { margin-bottom: clamp(2rem, 4vw, 3rem); }

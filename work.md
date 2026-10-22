@@ -7,7 +7,7 @@ permalink: /work/
   <header class="page__head">
     <h1 class="display">Work</h1>
   </header>
-  {%- for c in site.categories %}
+  {%- for c in site.areas %}
   {%- assign projects = site.projects | where: "category", c.key | sort: "order" %}
   <section class="work-group" aria-labelledby="group-{{ c.key }}">
     <div class="work-group__head">
