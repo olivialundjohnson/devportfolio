@@ -103,9 +103,8 @@ show as `[TODO]` markers on the site until filled.
 
 **`_projects/caddisfly.md`**
 - Collaborators and year
-- Waterbear link (`link.url`), pending the new deal
-- YouTube trailer ID (optional)
-- Alt text for the opening image and 3 stills
+- Waterbear link: the button currently plays the trailer; swap it in once the new deal is signed (instructions are in the file)
+- Three stills, with alt text
 
 **`_projects/jackson-wild-fellowship.md`**
 - Alt text for the opening image and 2 stills
