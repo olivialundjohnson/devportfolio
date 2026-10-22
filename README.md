@@ -1,0 +1,168 @@
+# Olivia Johnson — portfolio
+
+A Jekyll site for GitHub Pages. You never run a build: edit a file, push (or
+edit directly on GitHub), and the site updates in a minute or two. It uses only
+plugins GitHub Pages supports (`jekyll-seo-tag`, `jekyll-sitemap`).
+
+Anything still missing shows on the site as a dashed **[TODO: …]** marker, and
+every one of them is listed at the bottom of this file.
+
+## Preview it
+
+**On GitHub (easiest):** push the repo, then go to **Settings → Pages** and pick
+**Deploy from a branch → `main` → `/ (root)`**. If you use a custom domain, add
+a `CNAME` file containing just the domain (e.g. `oliviajohnson.com`) and set
+`url:` in `_config.yml`.
+
+**On your computer (optional, needs Ruby):**
+
+```sh
+bundle install
+bundle exec jekyll serve      # open http://localhost:4000
+```
+
+Restart `jekyll serve` after editing `_config.yml`; other files reload by themselves.
+
+## How the site is organized
+
+| What | Where |
+| --- | --- |
+| Name, descriptor, footer line, email, LinkedIn, nav | `_config.yml` |
+| The four homepage tiles (title, subtitle, image, link) | `areas:` in `_config.yml` |
+| Homepage headline, subline, optional hero clip | `index.md` |
+| Projects (one file each) | `_projects/` |
+| Area pages (Film, Writing, Energy & Climate, Audio) | `film.md`, `writing.md`, `energy.md`, `audio.md`, which list their projects automatically |
+| About / Contact | `about.md` / `contact.md` |
+| Colors and fonts | top of `assets/css/main.css` |
+
+## Add a project
+
+1. Copy an existing file in `_projects/`, e.g. `caddisfly.md` → `my-new-film.md`.
+   The file name becomes the address: `/work/my-new-film/`.
+2. Edit the settings between the `---` lines:
+   - `category:` `film`, `writing`, `energy`, or `audio`. This decides which area page lists it.
+   - `order:` its position within that area (1 = first).
+   - `description:` one or two sentences.
+   - `opening:` the large image at the top. Add a `youtube_id` to make it a click-to-play video.
+   - `facts:` rows like My role, Collaborators, Year. Add, rename, or delete rows freely.
+   - `link:` the one call to action (`label` + `url`), e.g. "Listen on Spotify".
+   - Optional sections: `visuals` (images), `highlights` (excerpts or findings), `sources`, `framework`.
+3. Write the idea or challenge as normal text below the second `---`.
+
+Every project uses the same template (`_layouts/project.html`). Sections you
+leave out simply don't appear.
+
+**YouTube IDs** are the part after `v=` in a YouTube link:
+`youtube.com/watch?v=`**`abc123XYZ`**. Nothing loads from YouTube until someone presses play.
+
+## Swap an image
+
+All images here are placeholders. Use only files you own or have licensed.
+
+- **Easiest:** upload your image with the **same name and folder** as the
+  placeholder it replaces (each placeholder shows its own path).
+- **Or:** add a new file and change the path in the Markdown/YAML.
+- **Always** update the matching `alt:` text with a short description of the image.
+- Any size is fine. When you push, a GitHub Action
+  (`.github/workflows/optimize-images.yml`) shrinks images in `assets/images/`
+  to at most 1920px wide, compresses them, strips camera metadata (including
+  GPS location), and commits the result. File names stay the same. Use JPG or WebP for photos.
+
+Shapes used: homepage tiles 5:4, project openings 16:9, visuals 3:2 (a lone
+first image in an odd-numbered set shows wide, 21:9), About portrait 4:5.
+
+| Image | File |
+| --- | --- |
+| Homepage tiles | `assets/images/home/film.jpg`, `writing.jpg`, `energy.jpg`, `audio.jpg` |
+| Project opening images | `assets/images/projects/<project>/opening.jpg` |
+| Project visuals | `assets/images/projects/<project>/still-1.jpg`, `still-2.jpg`, … |
+| About portrait | `assets/images/about/portrait.jpg` |
+
+## Optional hero clip
+
+Off by default. To turn it on, add a short, silent MP4 (10–20 s, 1080p, under
+about 8 MB) at `assets/video/hero.mp4`, then set `hero_video:` and
+`hero_poster:` in `index.md`. It loops muted with visible playback controls,
+shows the poster until it loads, and doesn't autoplay for visitors who've
+turned on "reduce motion".
+
+## Every [TODO]
+
+Search the repo for `[TODO` to jump to each one. Empty `url: ""` fields also
+show as `[TODO]` markers on the site until filled.
+
+**`_config.yml`**
+- `url`: site address
+- `author.email`: public email (footer + Contact)
+- `author.linkedin`: LinkedIn URL (footer + Contact)
+- `image_alt` for each of the four homepage tiles
+
+**`index.md`**
+- `hero_poster_alt`: only needed if you turn on the hero clip
+
+**`about.md`**
+- About copy (short, personal, connecting media and film to energy and climate)
+- Portrait alt text
+
+**`_projects/caddisfly.md`**
+- One-sentence description
+- Your role, collaborators, year
+- Waterbear link (`link.url`)
+- YouTube trailer ID (optional)
+- The idea (body text)
+- Alt text for the opening image and 3 stills
+
+**`_projects/jackson-wild-film.md`**
+- Film title
+- One-sentence description
+- Your role, collaborators, year
+- Link to watch (`link.url`)
+- YouTube ID (optional)
+- The idea or challenge (body text)
+- Alt text for the opening image and 2 stills
+
+**`_projects/narrative-short.md`**
+- Film title
+- One-sentence description
+- Your role, collaborators, year
+- Link to watch (`link.url`)
+- YouTube ID (optional)
+- The idea or challenge (body text)
+- Alt text for the opening image and 2 stills
+
+**`_projects/the-breathing-room.md`**
+- One-line description
+- Where and when it was published
+- Link to read (`link.url`)
+- Excerpt
+- Note on the idea (body text)
+- Opening image alt text
+
+**`_projects/data-center-load-growth.md`** (Yale research)
+- Research title
+- Year (in `description` and `facts`)
+- Advisor or collaborators, if any
+- Link to the paper or a summary, or delete the `link:` block if there isn't one
+- The challenge (body text)
+- Framework: intro sentence, plus the items under Load growth, Policy responses and Assessment
+- Key findings and their citations
+- Sources: copy the sources the research source file cites
+- Opening image alt text
+
+All findings, framework items and citations must come from the research source
+file. The section headings (Load growth, Policy responses, Assessment) are
+editable labels; rename them to match the research.
+
+**`_projects/ground-truth.md`**
+- One-line description
+- Spotify link (`link.url`)
+- Collaborators
+- The idea (body text)
+- Opening image or cover art alt text
+
+**Images:** every image in `assets/images/` is a placeholder (see "Swap an image").
+
+## Credits
+
+- Fonts: Instrument Serif and Inter (Google Fonts)
+- Video: [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) (MIT), vendored in `assets/vendor/`
