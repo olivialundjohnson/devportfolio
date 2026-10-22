@@ -42,7 +42,7 @@ layout: default
     </dl>
   </header>
 
-  {%- if content != "" %}
+  {%- assign body = content | strip %}{%- if body != "" %}
   <section class="wrap section">
     <div class="section__grid">
       <h2 class="section__title">{{ page.idea_heading | default: "The idea" }}</h2>
@@ -72,6 +72,11 @@ layout: default
   <section class="wrap section">
     <div class="section__grid">
       <h2 class="section__title">{{ page.highlights_heading | default: "Highlights" }}</h2>
+      {%- if page.highlights_style == "list" %}
+      <ul class="award-list">
+        {%- for h in page.highlights %}<li>{{ h.text }}</li>{% endfor %}
+      </ul>
+      {%- else %}
       <ul class="highlights">
         {%- for h in page.highlights %}
         <li class="highlight">
@@ -80,6 +85,7 @@ layout: default
         </li>
         {%- endfor %}
       </ul>
+      {%- endif %}
     </div>
   </section>
   {%- endif %}

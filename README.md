@@ -112,8 +112,8 @@ show as `[TODO]` markers on the site until filled.
 - YouTube ID for the National Park Service short (optional)
 
 **`_projects/empty-nest.md`**
-- Your role, collaborators, year
-- Alt text for the opening image and 2 stills
+- Collaborators and year
+- Two stills, with alt text
 - Optional: a few sentences about the film below the second `---`
 
 **`_projects/the-breathing-room.md`**

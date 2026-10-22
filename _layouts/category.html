@@ -7,7 +7,7 @@ layout: default
     <p class="eyebrow"><a href="{{ '/work/' | relative_url }}">Work</a></p>
     <h1 class="display">{{ cat.title }}</h1>
     <p class="lede">{{ cat.subtitle }}</p>
-    {%- if content != "" %}<div class="prose">{{ content }}</div>{% endif %}
+    {%- assign body = content | strip %}{%- if body != "" %}<div class="prose">{{ content }}</div>{% endif %}
   </header>
   {%- assign projects = site.projects | where: "category", page.category | sort: "order" %}
   <ul class="project-list">

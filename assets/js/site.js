@@ -14,12 +14,13 @@ document.querySelectorAll('.js-vimeo').forEach(function (box) {
   var play = box.querySelector('.video-facade__play');
   play.addEventListener('click', function (e) {
     e.preventDefault();
-    var src = 'https://player.vimeo.com/video/' + encodeURIComponent(box.dataset.vimeoId) + '?autoplay=1&dnt=1';
+    var src = 'https://player.vimeo.com/video/' + encodeURIComponent(box.dataset.vimeoId) + '?autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0&dnt=1';
     if (box.dataset.vimeoHash) src += '&h=' + encodeURIComponent(box.dataset.vimeoHash);
     var frame = document.createElement('iframe');
     frame.src = src;
     frame.title = box.dataset.title || 'Video';
-    frame.allow = 'autoplay; fullscreen; picture-in-picture';
+    frame.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share';
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
     frame.allowFullscreen = true;
     box.replaceChildren(frame);
     box.classList.add('is-playing');
